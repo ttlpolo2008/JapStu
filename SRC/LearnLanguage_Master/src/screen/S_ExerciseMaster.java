@@ -889,7 +889,7 @@ public class S_ExerciseMaster {
 		cbxAnswerType.setSelectedIndex(0);
 		txtQuestionContent.setText("");
 		txtQuestionContentFile.setText("");
-		txtMark.setText("");
+		txtMark.setText("2");
 		txtTime.setText("");
 		chkAnswer1.setSelected(false);
 		chkAnswer2.setSelected(false);

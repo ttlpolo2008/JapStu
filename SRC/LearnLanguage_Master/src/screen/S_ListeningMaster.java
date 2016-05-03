@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
@@ -59,7 +60,7 @@ public class S_ListeningMaster {
 	// TextField ContentFile
 	private JTextField txtContentFile;
 	// TextField ContentTranslate
-	private JTextField txtContentTranslate;
+	private JTextArea txtContentTranslate;
 
 	// Button Back
 	private JButton btnBack;
@@ -99,7 +100,7 @@ public class S_ListeningMaster {
 		frmListeningMaster = new JFrame();
 		frmListeningMaster.setResizable(false);
 		frmListeningMaster.setTitle("Listening Master");
-		frmListeningMaster.setBounds(100, 100, 600, 550);
+		frmListeningMaster.setBounds(100, 100, 600, 590);
 		frmListeningMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmListeningMaster.getContentPane().setLayout(new BoxLayout(frmListeningMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -382,12 +383,14 @@ public class S_ListeningMaster {
 		registerPanel.add(lblContentTranslate);
 
 		// TextField txtContentTranslate
-		txtContentTranslate = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtContentTranslate, 50, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtContentTranslate, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtContentTranslate, 450, SpringLayout.WEST, registerPanel);
-		txtContentTranslate.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtContentTranslate);
+		txtContentTranslate = new JTextArea();
+		JScrollPane contentTranslateScrollPane = new JScrollPane(txtContentTranslate);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, contentTranslateScrollPane, 150, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, contentTranslateScrollPane, 450, SpringLayout.WEST, registerPanel);
+		txtContentTranslate.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(contentTranslateScrollPane);
 
 		// Initialize RegisterArea's button
 		initRegisterAreaButton();
@@ -407,9 +410,9 @@ public class S_ListeningMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -421,9 +424,9 @@ public class S_ListeningMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 

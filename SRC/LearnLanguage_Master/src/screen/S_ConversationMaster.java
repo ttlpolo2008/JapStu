@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
@@ -57,9 +58,9 @@ public class S_ConversationMaster {
 	private JTable tblInfo;
 
 	// TextField Content
-	private JTextField txtContent;
+	private JTextArea txtContent;
 	// TextField ContentTranslate
-	private JTextField txtContentTranslate;
+	private JTextArea txtContentTranslate;
 	// TextField ContentFile
 	private JTextField txtContentFile;
 
@@ -101,7 +102,7 @@ public class S_ConversationMaster {
 		frmConversationMaster = new JFrame();
 		frmConversationMaster.setResizable(false);
 		frmConversationMaster.setTitle("Conversation Master");
-		frmConversationMaster.setBounds(100, 100, 600, 580);
+		frmConversationMaster.setBounds(100, 100, 600, 560);
 		frmConversationMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmConversationMaster.getContentPane().setLayout(new BoxLayout(frmConversationMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -114,7 +115,7 @@ public class S_ConversationMaster {
 		searchPanel = new JPanel();
 		sl_panel.putConstraint(SpringLayout.NORTH, searchPanel, 0, SpringLayout.NORTH, panel);
 		sl_panel.putConstraint(SpringLayout.WEST, searchPanel, 0, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, searchPanel, 400, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, searchPanel, 300, SpringLayout.NORTH, panel);
 		sl_panel.putConstraint(SpringLayout.EAST, searchPanel, 0, SpringLayout.EAST, panel);
 		panel.add(searchPanel);
 
@@ -123,7 +124,7 @@ public class S_ConversationMaster {
 
 		// Create RegisterPanel
 		registerPanel = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, registerPanel, 400, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.NORTH, registerPanel, 300, SpringLayout.NORTH, panel);
 		sl_panel.putConstraint(SpringLayout.WEST, registerPanel, 0, SpringLayout.WEST, panel);
 		sl_panel.putConstraint(SpringLayout.SOUTH, registerPanel, 0, SpringLayout.SOUTH, panel);
 		sl_panel.putConstraint(SpringLayout.EAST, registerPanel, 0, SpringLayout.EAST, panel);
@@ -166,7 +167,7 @@ public class S_ConversationMaster {
 		JScrollPane scrollPane = new JScrollPane();
 		sl_panel_1.putConstraint(SpringLayout.NORTH, scrollPane, 45, SpringLayout.NORTH, searchPanel);
 		sl_panel_1.putConstraint(SpringLayout.WEST, scrollPane, 40, SpringLayout.WEST, searchPanel);
-		sl_panel_1.putConstraint(SpringLayout.SOUTH, scrollPane, 345, SpringLayout.NORTH, searchPanel);
+		sl_panel_1.putConstraint(SpringLayout.SOUTH, scrollPane, 245, SpringLayout.NORTH, searchPanel);
 		sl_panel_1.putConstraint(SpringLayout.EAST, scrollPane, 540, SpringLayout.WEST, searchPanel);
 		searchPanel.add(scrollPane);
 
@@ -283,9 +284,9 @@ public class S_ConversationMaster {
 				actNew();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnNew, 360, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnNew, 260, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnNew, 40, SpringLayout.WEST, searchPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnNew, 390, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnNew, 290, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnNew, 120, SpringLayout.WEST, searchPanel);
 		searchPanel.add(btnNew);
 
@@ -297,9 +298,9 @@ public class S_ConversationMaster {
 				actModify();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnModify, 360, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnModify, 260, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnModify, 130, SpringLayout.WEST, searchPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnModify, 390, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnModify, 290, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnModify, 210, SpringLayout.WEST, searchPanel);
 		searchPanel.add(btnModify);
 
@@ -311,9 +312,9 @@ public class S_ConversationMaster {
 				actDelete();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnDelete, 360, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnDelete, 260, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnDelete, 220, SpringLayout.WEST, searchPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnDelete, 390, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnDelete, 290, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnDelete, 300, SpringLayout.WEST, searchPanel);
 		searchPanel.add(btnDelete);
 
@@ -325,9 +326,9 @@ public class S_ConversationMaster {
 				actRegister();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnRegister, 360, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnRegister, 260, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnRegister, 350, SpringLayout.WEST, searchPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnRegister, 390, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnRegister, 290, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnRegister, 450, SpringLayout.WEST, searchPanel);
 		searchPanel.add(btnRegister);
 
@@ -339,9 +340,9 @@ public class S_ConversationMaster {
 				actBack();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnBack, 360, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnBack, 260, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnBack, 460, SpringLayout.WEST, searchPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnBack, 390, SpringLayout.NORTH, searchPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnBack, 290, SpringLayout.NORTH, searchPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnBack, 540, SpringLayout.WEST, searchPanel);
 		searchPanel.add(btnBack);
 	}
@@ -371,36 +372,40 @@ public class S_ConversationMaster {
 		registerPanel.add(lblContent);
 
 		// TextField txtContent
-		txtContent = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtContent, 20, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtContent, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtContent, 450, SpringLayout.WEST, registerPanel);
-		txtContent.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtContent);
+		txtContent = new JTextArea();
+		JScrollPane contentScrollPane = new JScrollPane(txtContent);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentScrollPane, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, contentScrollPane, 150, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentScrollPane, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, contentScrollPane, 450, SpringLayout.WEST, registerPanel);
+		txtContent.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(contentScrollPane);
 
 		// Label lblContentTranslate
 		JLabel lblContentTranslate = new JLabel("Content Translate");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 90, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentTranslate, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentTranslate);
 
 		// TextField txtContentTranslate
-		txtContentTranslate = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtContentTranslate, 50, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtContentTranslate, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtContentTranslate, 450, SpringLayout.WEST, registerPanel);
-		txtContentTranslate.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtContentTranslate);
+		txtContentTranslate = new JTextArea();
+		JScrollPane contentTranslateScrollPane = new JScrollPane(txtContentTranslate);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 90, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, contentTranslateScrollPane, 150, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, contentTranslateScrollPane, 450, SpringLayout.WEST, registerPanel);
+		txtContentTranslate.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(contentTranslateScrollPane);
 
 		// Label lblContentFile
 		JLabel lblContentFile = new JLabel("Content File");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentFile, 160, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentFile, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentFile);
 
 		// TextField txtContentFile
 		txtContentFile = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtContentFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, txtContentFile, 160, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtContentFile, 150, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtContentFile, 450, SpringLayout.WEST, registerPanel);
 		txtContentFile.setDocument(new JTextFieldLimit(100));
@@ -424,9 +429,9 @@ public class S_ConversationMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 190, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 220, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -438,9 +443,9 @@ public class S_ConversationMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 190, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 220, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 

@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
@@ -59,7 +60,7 @@ public class S_KanjiMaster {
 	// TextField Word
 	private JTextField txtWord;
 	// TextField Meaning
-	private JTextField txtMeaning;
+	private JTextArea txtMeaning;
 	// TextField WriteFile
 	private JTextField txtWriteFile;
 	// TextField Explain
@@ -103,7 +104,7 @@ public class S_KanjiMaster {
 		frmKanjiMaster = new JFrame();
 		frmKanjiMaster.setResizable(false);
 		frmKanjiMaster.setTitle("Kanji Master");
-		frmKanjiMaster.setBounds(100, 100, 600, 610);
+		frmKanjiMaster.setBounds(100, 100, 600, 620);
 		frmKanjiMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmKanjiMaster.getContentPane().setLayout(new BoxLayout(frmKanjiMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -388,22 +389,24 @@ public class S_KanjiMaster {
 		registerPanel.add(lblMeaning);
 
 		// TextField txtMeaning
-		txtMeaning = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtMeaning, 50, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtMeaning, 130, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtMeaning, 430, SpringLayout.WEST, registerPanel);
-		txtMeaning.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtMeaning);
+		txtMeaning = new JTextArea();
+		JScrollPane meaningScrollPane = new JScrollPane(txtMeaning);
+		sl_panel.putConstraint(SpringLayout.NORTH, meaningScrollPane, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, meaningScrollPane, 130, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, meaningScrollPane, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, meaningScrollPane, 430, SpringLayout.WEST, registerPanel);
+		txtMeaning.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(meaningScrollPane);
 
 		// Label lblWriteFile
 		JLabel lblWriteFile = new JLabel("Write File");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblWriteFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblWriteFile, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblWriteFile, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblWriteFile);
 
 		// TextField txtWriteFile
 		txtWriteFile = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtWriteFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, txtWriteFile, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtWriteFile, 130, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtWriteFile, 430, SpringLayout.WEST, registerPanel);
 		txtWriteFile.setDocument(new JTextFieldLimit(100));
@@ -413,7 +416,7 @@ public class S_KanjiMaster {
 		JLabel lblExplain = new JLabel("Explain");
 		sl_panel.putConstraint(SpringLayout.NORTH, lblExplain, 110, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblExplain, 40, SpringLayout.WEST, registerPanel);
-		registerPanel.add(lblExplain);
+//		registerPanel.add(lblExplain);
 
 		// TextField txtExplain
 		txtExplain = new JTextField();
@@ -421,7 +424,7 @@ public class S_KanjiMaster {
 		sl_panel.putConstraint(SpringLayout.WEST, txtExplain, 130, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtExplain, 430, SpringLayout.WEST, registerPanel);
 		txtExplain.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtExplain);
+//		registerPanel.add(txtExplain);
 
 		// Initialize RegisterArea's button
 		initRegisterAreaButton();
@@ -441,9 +444,9 @@ public class S_KanjiMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 170, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -455,9 +458,9 @@ public class S_KanjiMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 170, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 

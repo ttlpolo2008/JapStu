@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
@@ -59,11 +60,11 @@ public class S_VocabularyMaster {
 	// TextField Word
 	private JTextField txtWord;
 	// TextField Meaning
-	private JTextField txtMeaning;
+	private JTextArea txtMeaning;
 	// TextField PronunceFile
 	private JTextField txtPronunceFile;
 	// TextField Explain
-	private JTextField txtExplain;
+	private JTextArea txtExplain;
 
 	// Button Back
 	private JButton btnBack;
@@ -103,7 +104,7 @@ public class S_VocabularyMaster {
 		frmVocabularyMaster = new JFrame();
 		frmVocabularyMaster.setResizable(false);
 		frmVocabularyMaster.setTitle("Vocabulary Master");
-		frmVocabularyMaster.setBounds(100, 100, 600, 610);
+		frmVocabularyMaster.setBounds(100, 100, 600, 620);
 		frmVocabularyMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmVocabularyMaster.getContentPane().setLayout(new BoxLayout(frmVocabularyMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -388,22 +389,24 @@ public class S_VocabularyMaster {
 		registerPanel.add(lblMeaning);
 
 		// TextField txtMeaning
-		txtMeaning = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtMeaning, 50, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtMeaning, 130, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtMeaning, 430, SpringLayout.WEST, registerPanel);
-		txtMeaning.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtMeaning);
+		txtMeaning = new JTextArea();
+		JScrollPane meaningScrollPane = new JScrollPane(txtMeaning);
+		sl_panel.putConstraint(SpringLayout.NORTH, meaningScrollPane, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, meaningScrollPane, 130, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, meaningScrollPane, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, meaningScrollPane, 430, SpringLayout.WEST, registerPanel);
+		txtMeaning.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(meaningScrollPane);
 
 		// Label lblPronunceFile
 		JLabel lblPronunceFile = new JLabel("Pronunce File");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblPronunceFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblPronunceFile, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblPronunceFile, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblPronunceFile);
 
 		// TextField txtPronunceFile
 		txtPronunceFile = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtPronunceFile, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, txtPronunceFile, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtPronunceFile, 130, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtPronunceFile, 430, SpringLayout.WEST, registerPanel);
 		txtPronunceFile.setDocument(new JTextFieldLimit(100));
@@ -413,15 +416,15 @@ public class S_VocabularyMaster {
 		JLabel lblExplain = new JLabel("Explain");
 		sl_panel.putConstraint(SpringLayout.NORTH, lblExplain, 110, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblExplain, 40, SpringLayout.WEST, registerPanel);
-		registerPanel.add(lblExplain);
+//		registerPanel.add(lblExplain);
 
 		// TextField txtExplain
-		txtExplain = new JTextField();
+		txtExplain = new JTextArea();
 		sl_panel.putConstraint(SpringLayout.NORTH, txtExplain, 110, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtExplain, 130, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtExplain, 430, SpringLayout.WEST, registerPanel);
 		txtExplain.setDocument(new JTextFieldLimit(100));
-		registerPanel.add(txtExplain);
+//		registerPanel.add(txtExplain);
 
 		// Initialize RegisterArea's button
 		initRegisterAreaButton();
@@ -441,9 +444,9 @@ public class S_VocabularyMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 170, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -455,9 +458,9 @@ public class S_VocabularyMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 140, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 170, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 
