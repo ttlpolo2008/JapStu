@@ -1,28 +1,10 @@
 package services;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
-import dto.ConversationDto;
-import dto.ExerciseDto;
-import dto.GrammarDto;
-import dto.KanjiDto;
-import dto.LearnDto;
-import dto.LessonDto;
-import dto.ListeningDto;
-import dto.ReadingDto;
-import dto.UserDto;
-import dto.VocabularyDto;
-import json.DateTypeAdapter;
 import util.APIUtils;
 import util.Constants;
 
@@ -33,9 +15,9 @@ public class APIService {
 	 *
 	 * @param userName
 	 * @param password
-	 * @return UserDto
+	 * @return JsonObject
 	 */
-	public static UserDto findUserInfo(String userName, String password) {
+	public static JsonObject findUserInfo(String userName, String password) {
 
 		try {
 
@@ -49,11 +31,9 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_USER, Constants.API_FIND_USER_INFO, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				return gson.fromJson(data, UserDto.class);
+				return result.get("data").getAsJsonObject();
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -66,11 +46,10 @@ public class APIService {
 	 * Search all study history
 	 *
 	 * @param userId
-	 * @return Map<Long, LearnDto>
+	 * @return JsonElement
 	 */
-	public static Map<Long, LearnDto> searchStudyHistoryAll(Long userId) {
+	public static JsonElement searchStudyHistoryAll(Long userId) {
 
-		Map<Long, LearnDto> studyMap = new HashMap<Long, LearnDto>();
 		try {
 
 			// Create body
@@ -82,30 +61,24 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_LEARN, Constants.API_SEARCH_STUDY_HIS_ALL, body);
 			if (result.has("data")) {
-				Gson gson =
-						new GsonBuilder()
-						.registerTypeAdapter(Date.class, new DateTypeAdapter())
-						.registerTypeAdapter(java.sql.Date.class, new DateTypeAdapter())
-						.create();
-
-				JsonElement data = result.get("data");
-				studyMap = gson.fromJson(data, new TypeToken<Map<Long, LearnDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return studyMap;
+		return null;
 	}
 
 	/**
 	 * Search last study history
 	 *
 	 * @param userId
-	 * @return LearnDto
+	 * @return JsonObject
 	 */
-	public static LearnDto searchStudyHistoryLast(Long userId) {
+	public static JsonObject searchStudyHistoryLast(Long userId) {
 
 		try {
 
@@ -118,15 +91,9 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_LEARN, Constants.API_SEARCH_STUDY_HIS_LAST, body);
 			if (result.has("data")) {
-				Gson gson =
-						new GsonBuilder()
-						.registerTypeAdapter(Date.class, new DateTypeAdapter())
-						.registerTypeAdapter(java.sql.Date.class, new DateTypeAdapter())
-						.create();
-
-				JsonElement data = result.get("data");
-				return gson.fromJson(data, LearnDto.class);
+				return result.get("data").getAsJsonObject();
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -139,9 +106,9 @@ public class APIService {
 	 * Find Lesson
 	 *
 	 * @param lessonId
-	 * @return LessonDto
+	 * @return JsonObject
 	 */
-	public static LessonDto findLesson(Long lessonId) {
+	public static JsonObject findLesson(Long lessonId) {
 
 		try {
 
@@ -154,11 +121,9 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_LESSON, Constants.API_FIND_LESSON, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				return gson.fromJson(data, LessonDto.class);
+				return result.get("data").getAsJsonObject();
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -171,9 +136,9 @@ public class APIService {
 	 * Find next Lesson
 	 *
 	 * @param lessonId
-	 * @return LessonDto
+	 * @return JsonObject
 	 */
-	public static LessonDto findNextLesson(Long lessonId) {
+	public static JsonObject findNextLesson(Long lessonId) {
 
 		try {
 
@@ -186,11 +151,9 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_LESSON, Constants.API_FIND_NEXT_LESSON, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				return gson.fromJson(data, LessonDto.class);
+				return result.get("data").getAsJsonObject();
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -203,11 +166,10 @@ public class APIService {
 	 * Search Vocabulary
 	 *
 	 * @param lessonId
-	 * @return List<VocabularyDto>
+	 * @return JsonElement
 	 */
-	public static List<VocabularyDto> searchVocabulary(Long lessonId) {
+	public static JsonElement searchVocabulary(Long lessonId) {
 
-		List<VocabularyDto> vocabularyDtoList = new ArrayList<VocabularyDto>();
 		try {
 
 			// Create body
@@ -219,28 +181,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_VOCABULARY, Constants.API_SEARCH_VOCABULARY, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				vocabularyDtoList = gson.fromJson(data, new TypeToken<List<VocabularyDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return vocabularyDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Grammar
 	 *
 	 * @param lessonId
-	 * @return List<GrammarDto>
+	 * @return JsonElement
 	 */
-	public static List<GrammarDto> searchGrammar(Long lessonId) {
+	public static JsonElement searchGrammar(Long lessonId) {
 
-		List<GrammarDto> grammarDtoList = new ArrayList<GrammarDto>();
 		try {
 
 			// Create body
@@ -252,28 +211,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_GRAMMAR, Constants.API_SEARCH_GRAMMAR, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				grammarDtoList = gson.fromJson(data, new TypeToken<List<GrammarDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return grammarDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Reading
 	 *
 	 * @param lessonId
-	 * @return List<ReadingDto>
+	 * @return JsonElement
 	 */
-	public static List<ReadingDto> searchReading(Long lessonId) {
+	public static JsonElement searchReading(Long lessonId) {
 
-		List<ReadingDto> readingDtoList = new ArrayList<ReadingDto>();
 		try {
 
 			// Create body
@@ -285,28 +241,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_READING, Constants.API_SEARCH_READING, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				readingDtoList = gson.fromJson(data, new TypeToken<List<ReadingDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return readingDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Listening
 	 *
 	 * @param lessonId
-	 * @return List<ListeningDto>
+	 * @return JsonElement
 	 */
-	public static List<ListeningDto> searchListening(Long lessonId) {
+	public static JsonElement searchListening(Long lessonId) {
 
-		List<ListeningDto> listeningDtoList = new ArrayList<ListeningDto>();
 		try {
 
 			// Create body
@@ -318,28 +271,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_LISTENING, Constants.API_SEARCH_LISTENING, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				listeningDtoList = gson.fromJson(data, new TypeToken<List<ListeningDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return listeningDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Conversation
 	 *
 	 * @param lessonId
-	 * @return List<ConversationDto>
+	 * @return JsonElement
 	 */
-	public static List<ConversationDto> searchConversation(Long lessonId) {
+	public static JsonElement searchConversation(Long lessonId) {
 
-		List<ConversationDto> conversationDtoList = new ArrayList<ConversationDto>();
 		try {
 
 			// Create body
@@ -351,28 +301,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_CONVERSATION, Constants.API_SEARCH_CONVERSATION, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				conversationDtoList = gson.fromJson(data, new TypeToken<List<ConversationDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return conversationDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Kanji
 	 *
 	 * @param lessonId
-	 * @return List<KanjiDto>
+	 * @return JsonElement
 	 */
-	public static List<KanjiDto> searchKanji(Long lessonId) {
+	public static JsonElement searchKanji(Long lessonId) {
 
-		List<KanjiDto> kanjiDtoList = new ArrayList<KanjiDto>();
 		try {
 
 			// Create body
@@ -384,28 +331,25 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_KANJI, Constants.API_SEARCH_KANJI, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				kanjiDtoList = gson.fromJson(data, new TypeToken<List<KanjiDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return kanjiDtoList;
+		return null;
 	}
 
 	/**
 	 * Search Exercise
 	 *
 	 * @param lessonId
-	 * @return List<ExerciseDto>
+	 * @return JsonElement
 	 */
-	public static List<ExerciseDto> searchExercise(Long lessonId) {
+	public static JsonElement searchExercise(Long lessonId) {
 
-		List<ExerciseDto> exerciseDtoList = new ArrayList<ExerciseDto>();
 		try {
 
 			// Create body
@@ -417,17 +361,15 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_EXERCISE, Constants.API_SEARCH_EXERCISE, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
-
-				JsonElement data = result.get("data");
-				exerciseDtoList = gson.fromJson(data, new TypeToken<List<ExerciseDto>>() {}.getType());
+				return result.get("data");
 			}
+			return result;
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return exerciseDtoList;
+		return null;
 	}
 
 	/**
@@ -440,13 +382,12 @@ public class APIService {
 	 * @param listeningNumber
 	 * @param conversationNumber
 	 * @param kanjiNumber
-	 * @return List<ExerciseDto>
+	 * @return JsonElement
 	 */
-	public static List<ExerciseDto> createTest(Long lessonId, Long vocabularyNumber, Long grammarNumber,
-											   Long readingNumber, Long listeningNumber, Long conversationNumber,
-											   Long kanjiNumber) {
+	public static JsonElement createTest(Long lessonId, Long vocabularyNumber, Long grammarNumber,
+										 Long readingNumber, Long listeningNumber, Long conversationNumber,
+										 Long kanjiNumber) {
 
-		List<ExerciseDto> exerciseDtoList = new ArrayList<ExerciseDto>();
 		try {
 
 			// Create body
@@ -464,16 +405,158 @@ public class APIService {
 					APIUtils.callSearchAPI(
 							Constants.URI_EXERCISE, Constants.API_CREATE_TEST, body);
 			if (result.has("data")) {
-				Gson gson = new Gson();
+				return result.get("data");
+			}
+			return result;
 
-				JsonElement data = result.get("data");
-				exerciseDtoList = gson.fromJson(data, new TypeToken<List<ExerciseDto>>() {}.getType());
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return null;
+	}
+
+	/**
+	 * Register Account
+	 *
+	 * @param userName
+	 * @param password
+	 * @param nickName
+	 *
+	 * @return Boolean
+	 */
+	public static Boolean registerAccount(String userName, String password,
+										  String nickName) {
+		return registerAccount(userName, password, nickName, null, null);
+	}
+
+	/**
+	 * Register Account
+	 *
+	 * @param userName
+	 * @param password
+	 * @param nickName
+	 * @param age
+	 * @param profileImage
+	 *
+	 * @return Boolean
+	 */
+	public static Boolean registerAccount(String userName, String password,
+										  String nickName, Integer age,
+										  byte[] profileImage) {
+
+		try {
+
+			// Create body
+			JsonObject body = new JsonObject();
+			body.addProperty("userName", userName);
+			body.addProperty("password", password);
+			if (nickName != null) {
+				body.addProperty("nickName", nickName);
+			}
+			if (age != null) {
+				body.addProperty("age", age);
+			}
+			if (profileImage != null) {
+				body.addProperty("profileImage", new String(profileImage));
+			}
+
+			// Call RegisterAPI
+			JsonObject result =
+					APIUtils.callSearchAPI(
+							Constants.URI_USER, Constants.API_REGISTER_ACCOUNT, body);
+			if (result.has("result")) {
+				return result.get("result").getAsBoolean();
 			}
 
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
 
-		return exerciseDtoList;
+		return false;
+	}
+
+	/**
+	 * Register Lesson
+	 *
+	 * @param userId
+	 * @param lessonId
+	 * @param startDate
+	 * @param endDate
+	 * @param status
+	 * @param courseStatus
+	 * @param examMark
+	 *
+	 * @return Boolean
+	 */
+	public static Boolean registerUsersLesson(Long userId, Long lessonId,
+											  Date startDate, Date endDate,
+											  Boolean status, String courseStatus,
+											  Long examMark) {
+
+		try {
+
+			// Create body
+			JsonObject body = new JsonObject();
+			body.addProperty("userId", userId);
+			body.addProperty("lessonId", lessonId);
+			if (startDate != null) {
+				body.addProperty("startDate", startDate.getTime());
+			}
+			if (endDate != null) {
+				body.addProperty("endDate", endDate.getTime());
+			}
+			if (status != null) {
+				body.addProperty("status", status);
+			}
+			if (courseStatus != null) {
+				body.addProperty("courseStatus", courseStatus);
+			}
+			if (examMark != null) {
+				body.addProperty("examMark", examMark);
+			}
+
+			// Call RegisterAPI
+			JsonObject result =
+					APIUtils.callSearchAPI(
+							Constants.URI_LEARN, Constants.API_REGISTER_USERS_LESSON, body);
+			if (result.has("result")) {
+				return result.get("result").getAsBoolean();
+			}
+
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return false;
+	}
+
+	/**
+	 * Select AVG mark
+	 *
+	 * @param userId
+	 * @return Boolean
+	 */
+	public static Double selectAvgMark(Long userId) {
+
+		try {
+
+			// Create body
+			JsonObject body = new JsonObject();
+			body.addProperty("userId", userId);
+
+			// Call SelectAPI
+			JsonObject result =
+					APIUtils.callSearchAPI(
+							Constants.URI_LEARN, Constants.API_SELECT_AVG_MARK, body);
+			if (result.has("result")) {
+				return result.get("result").getAsDouble();
+			}
+
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return null;
 	}
 }

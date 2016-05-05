@@ -6,10 +6,13 @@ public class Constants {
 
 	public static final String URI_USER = "UserAPI";
 	public static final String API_FIND_USER_INFO = "findUserInfo";
+	public static final String API_REGISTER_ACCOUNT = "registerAccount";
 
 	public static final String URI_LEARN = "LearnAPI";
 	public static final String API_SEARCH_STUDY_HIS_ALL = "searchStudyHistoryAll";
 	public static final String API_SEARCH_STUDY_HIS_LAST = "searchStudyHistoryLast";
+	public static final String API_REGISTER_USERS_LESSON = "registerUsersLesson";
+	public static final String API_SELECT_AVG_MARK = "selectAvgMark";
 
 	public static final String URI_LESSON = "LessonAPI";
 	public static final String API_FIND_LESSON = "findLesson";
