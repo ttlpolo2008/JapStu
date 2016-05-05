@@ -14,6 +14,68 @@ import util.StringUtil;
 public class UserService {
 
 	/**
+	 * Find User
+	 *
+	 * @param userName
+	 * @return UserDto
+	 */
+	public static UserDto findUserByUserName(String userName) {
+
+		// Get DAO
+		Connection conn = CommonDAO.getDAO();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			// Create SQL
+			StringBuffer sqlQuery = new StringBuffer();
+			sqlQuery.append(" SELECT \n");
+			sqlQuery.append("   USER_ID \n");
+			sqlQuery.append("  ,USER_NAME \n");
+			sqlQuery.append("  ,PASS_WORD \n");
+			sqlQuery.append("  ,USER_TYPE \n");
+			sqlQuery.append("  ,NICK_NAME \n");
+			sqlQuery.append(" FROM \n");
+			sqlQuery.append("   T_USER \n");
+			sqlQuery.append(" WHERE \n");
+			sqlQuery.append("       1 = 1 \n");
+			sqlQuery.append("  AND USER_NAME LIKE ? \n");
+
+			// Create Statement
+			stmt = conn.prepareStatement(sqlQuery.toString());
+			stmt.setString(1, userName);
+
+			// Execute query
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				// Edit Dto
+				UserDto userDto = new UserDto();
+				userDto.setUserId(rs.getLong("USER_ID"));
+				userDto.setUserName(rs.getString("USER_NAME"));
+				userDto.setPassword(rs.getString("PASS_WORD"));
+				userDto.setUserType(rs.getString("USER_TYPE"));
+				userDto.setNickName(rs.getString("NICK_NAME"));
+
+				return userDto;
+			}
+
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+			} catch (Exception ex) {
+			}
+		}
+
+		return null;
+	}
+
+	/**
 	 * Search User
 	 *
 	 * @param conditionDto

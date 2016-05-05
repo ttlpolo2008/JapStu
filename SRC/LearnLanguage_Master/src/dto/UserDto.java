@@ -35,6 +35,16 @@ public class UserDto implements Serializable {
 	private String nickName;
 
 	/**
+	 * AGE
+	 */
+	private Integer age;
+
+	/**
+	 * String
+	 */
+	private String profileImage;
+
+	/**
 	 * Change's flag
 	 */
 	private Boolean isChange;
@@ -142,6 +152,34 @@ public class UserDto implements Serializable {
 	 */
 	public void setIsChange(Boolean isChange) {
 		this.isChange = isChange;
+	}
+
+	/**
+	 * @return the age
+	 */
+	public Integer getAge() {
+		return age;
+	}
+
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	/**
+	 * @return the profileImage
+	 */
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	/**
+	 * @param profileImage the profileImage to set
+	 */
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
 	}
 
 }
