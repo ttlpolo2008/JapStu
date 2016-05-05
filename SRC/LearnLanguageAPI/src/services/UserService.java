@@ -17,6 +17,72 @@ public class UserService {
 	 * Find User
 	 *
 	 * @param userName
+	 * @return UserDto
+	 */
+	public static UserDto findUserByUserName(String userName) {
+
+		// Get DAO
+		Connection conn = CommonDAO.getDAO();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			// Create SQL
+			StringBuffer sqlQuery = new StringBuffer();
+			sqlQuery.append(" SELECT \n");
+			sqlQuery.append("   USER_ID \n");
+			sqlQuery.append("  ,USER_NAME \n");
+			sqlQuery.append("  ,PASS_WORD \n");
+			sqlQuery.append("  ,USER_TYPE \n");
+			sqlQuery.append("  ,NICK_NAME \n");
+			sqlQuery.append("  ,AGE \n");
+			sqlQuery.append("  ,PROFILE_IMAGE \n");
+			sqlQuery.append(" FROM \n");
+			sqlQuery.append("   T_USER \n");
+			sqlQuery.append(" WHERE \n");
+			sqlQuery.append("       1 = 1 \n");
+			sqlQuery.append("  AND USER_NAME LIKE ? \n");
+
+			// Create Statement
+			stmt = conn.prepareStatement(sqlQuery.toString());
+			stmt.setString(1, userName);
+
+			// Execute query
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				// Edit Dto
+				UserDto userDto = new UserDto();
+				userDto.setUserId(rs.getLong("USER_ID"));
+				userDto.setUserName(rs.getString("USER_NAME"));
+				userDto.setPassword(rs.getString("PASS_WORD"));
+				userDto.setUserType(rs.getString("USER_TYPE"));
+				userDto.setNickName(rs.getString("NICK_NAME"));
+				userDto.setAge(rs.getInt("AGE"));
+				userDto.setProfileImage(rs.getString("PROFILE_IMAGE"));
+
+				return userDto;
+			}
+
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+			} catch (Exception ex) {
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Find User
+	 *
+	 * @param userName
 	 * @param password
 	 * @return List<UserDto>
 	 */
@@ -35,6 +101,8 @@ public class UserService {
 			sqlQuery.append("  ,PASS_WORD \n");
 			sqlQuery.append("  ,USER_TYPE \n");
 			sqlQuery.append("  ,NICK_NAME \n");
+			sqlQuery.append("  ,AGE \n");
+			sqlQuery.append("  ,PROFILE_IMAGE \n");
 			sqlQuery.append(" FROM \n");
 			sqlQuery.append("   T_USER \n");
 			sqlQuery.append(" WHERE \n");
@@ -72,6 +140,8 @@ public class UserService {
 				userDto.setPassword(rs.getString("PASS_WORD"));
 				userDto.setUserType(rs.getString("USER_TYPE"));
 				userDto.setNickName(rs.getString("NICK_NAME"));
+				userDto.setAge(rs.getInt("AGE"));
+				userDto.setProfileImage(rs.getString("PROFILE_IMAGE"));
 
 				return userDto;
 			}
@@ -285,10 +355,14 @@ public class UserService {
 			sqlQuery.append("    ,PASS_WORD \n");
 			sqlQuery.append("    ,USER_TYPE \n");
 			sqlQuery.append("    ,NICK_NAME \n");
+			sqlQuery.append("    ,AGE \n");
+			sqlQuery.append("    ,PROFILE_IMAGE \n");
 			sqlQuery.append("   ) \n");
 			sqlQuery.append(" VALUES \n");
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     ? \n");
+			sqlQuery.append("    ,? \n");
+			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
@@ -304,6 +378,8 @@ public class UserService {
 			stmt.setString(2, userDto.getPassword());
 			stmt.setString(3, userDto.getUserType());
 			stmt.setString(4, userDto.getNickName());
+			stmt.setInt(5, userDto.getAge());
+			stmt.setString(6, userDto.getProfileImage());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();

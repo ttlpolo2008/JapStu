@@ -2,6 +2,7 @@ package util;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class StringUtil {
 
@@ -75,5 +76,12 @@ public class StringUtil {
 			}
 		}
 		return null;
+	}
+
+	public static java.sql.Date cnvToDBDate(Date value) {
+		if (value == null) {
+			return null;
+		}
+		return new java.sql.Date(value.getTime());
 	}
 }
