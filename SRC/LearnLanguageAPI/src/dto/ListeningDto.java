@@ -20,6 +20,11 @@ public class ListeningDto implements Serializable {
 	private Long lessonCourseId;
 
 	/**
+	 * LISTENING_TYPE
+	 */
+	private String listeningType;
+
+	/**
 	 * CONTENT_FILE
 	 */
 	private String contentFile;
@@ -30,9 +35,9 @@ public class ListeningDto implements Serializable {
 	private byte[] contentFileStream;
 
 	/**
-	 * CONTENT_TRANSLATE
+	 * CONTENT
 	 */
-	private String contentTranslate;
+	private String content;
 
 	/**
 	 * ORDER_INDEX
@@ -57,8 +62,9 @@ public class ListeningDto implements Serializable {
 		ListeningDto vocabularyDto = new ListeningDto();
 		vocabularyDto.setListeningId(this.listeningId);
 		vocabularyDto.setLessonCourseId(this.lessonCourseId);
+		vocabularyDto.setListeningType(this.listeningType);
 		vocabularyDto.setContentFile(this.contentFile);
-		vocabularyDto.setContentTranslate(this.contentTranslate);
+		vocabularyDto.setContent(this.content);
 		vocabularyDto.setOrderIndex(this.orderIndex);
 		vocabularyDto.setIsChange(this.isChange);
 
@@ -122,20 +128,6 @@ public class ListeningDto implements Serializable {
 	}
 
 	/**
-	 * @return the contentTranslate
-	 */
-	public String getContentTranslate() {
-		return contentTranslate;
-	}
-
-	/**
-	 * @param contentTranslate the contentTranslate to set
-	 */
-	public void setContentTranslate(String contentTranslate) {
-		this.contentTranslate = contentTranslate;
-	}
-
-	/**
 	 * @return the orderIndex
 	 */
 	public Integer getOrderIndex() {
@@ -161,6 +153,34 @@ public class ListeningDto implements Serializable {
 	 */
 	public void setIsChange(Boolean isChange) {
 		this.isChange = isChange;
+	}
+
+	/**
+	 * @return the listeningType
+	 */
+	public String getListeningType() {
+		return listeningType;
+	}
+
+	/**
+	 * @param listeningType the listeningType to set
+	 */
+	public void setListeningType(String listeningType) {
+		this.listeningType = listeningType;
+	}
+
+	/**
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	/**
+	 * @param content the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 }

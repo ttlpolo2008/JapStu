@@ -35,8 +35,9 @@ public class ListeningService {
 			sqlQuery.append(" SELECT \n");
 			sqlQuery.append("   T3.LISTENING_ID \n");
 			sqlQuery.append("  ,T3.LESSON_COURSE_ID \n");
+			sqlQuery.append("  ,T3.LISTENING_TYPE \n");
 			sqlQuery.append("  ,T3.CONTENT_FILE \n");
-			sqlQuery.append("  ,T3.CONTENT_TRANSLATE \n");
+			sqlQuery.append("  ,T3.CONTENT \n");
 			sqlQuery.append("  ,T3.ORDER_INDEX \n");
 			sqlQuery.append(" FROM \n");
 			sqlQuery.append("   T_LESSON T1 \n");
@@ -65,8 +66,9 @@ public class ListeningService {
 				ListeningDto listeningDto = new ListeningDto();
 				listeningDto.setListeningId(rs.getLong("LISTENING_ID"));
 				listeningDto.setLessonCourseId(rs.getLong("LESSON_COURSE_ID"));
+				listeningDto.setListeningType(rs.getString("LISTENING_TYPE"));
 				listeningDto.setContentFile(rs.getString("CONTENT_FILE"));
-				listeningDto.setContentTranslate(rs.getString("CONTENT_TRANSLATE"));
+				listeningDto.setContent(rs.getString("CONTENT"));
 				listeningDto.setOrderIndex(rs.getInt("ORDER_INDEX"));
 
 				// Get File
@@ -209,13 +211,15 @@ public class ListeningService {
 			sqlQuery.append(" INSERT INTO `T_LISTENING` \n");
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     `LESSON_COURSE_ID` \n");
+			sqlQuery.append("    ,`LISTENING_TYPE` \n");
 			sqlQuery.append("    ,`CONTENT_FILE` \n");
-			sqlQuery.append("    ,`CONTENT_TRANSLATE` \n");
+			sqlQuery.append("    ,`CONTENT` \n");
 			sqlQuery.append("    ,`ORDER_INDEX` \n");
 			sqlQuery.append("   ) \n");
 			sqlQuery.append(" VALUES \n");
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     ? \n");
+			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
@@ -226,9 +230,10 @@ public class ListeningService {
 
 			// Edit parameter
 			stmt.setLong(1, listeningDto.getLessonCourseId());
-			stmt.setString(2, listeningDto.getContentFile());
-			stmt.setString(3, listeningDto.getContentTranslate());
-			stmt.setInt(4, listeningDto.getOrderIndex());
+			stmt.setString(2, listeningDto.getListeningType());
+			stmt.setString(3, listeningDto.getContentFile());
+			stmt.setString(4, listeningDto.getContent());
+			stmt.setInt(5, listeningDto.getOrderIndex());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();
@@ -262,8 +267,9 @@ public class ListeningService {
 			StringBuffer sqlQuery = new StringBuffer();
 			sqlQuery.append(" UPDATE `T_LISTENING` \n");
 			sqlQuery.append(" SET \n");
-			sqlQuery.append("     `CONTENT_FILE` = ? \n");
-			sqlQuery.append("    ,`CONTENT_TRANSLATE` = ? \n");
+			sqlQuery.append("     `LISTENING_TYPE` = ? \n");
+			sqlQuery.append("    ,`CONTENT_FILE` = ? \n");
+			sqlQuery.append("    ,`CONTENT` = ? \n");
 			sqlQuery.append("    ,`ORDER_INDEX` = ? \n");
 			sqlQuery.append(" WHERE \n");
 			sqlQuery.append("       `LISTENING_ID` = ? \n");
@@ -272,10 +278,11 @@ public class ListeningService {
 			PreparedStatement stmt = conn.prepareStatement(sqlQuery.toString());
 
 			// Edit parameter
-			stmt.setString(1, listeningDto.getContentFile());
-			stmt.setString(2, listeningDto.getContentTranslate());
-			stmt.setInt(3, listeningDto.getOrderIndex());
-			stmt.setLong(4, listeningDto.getListeningId());
+			stmt.setString(1, listeningDto.getListeningType());
+			stmt.setString(2, listeningDto.getContentFile());
+			stmt.setString(3, listeningDto.getContent());
+			stmt.setInt(4, listeningDto.getOrderIndex());
+			stmt.setLong(5, listeningDto.getListeningId());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();

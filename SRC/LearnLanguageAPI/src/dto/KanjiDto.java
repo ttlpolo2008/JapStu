@@ -25,6 +25,16 @@ public class KanjiDto implements Serializable {
 	private String word;
 
 	/**
+	 * ON_YOMI
+	 */
+	private String onYomi;
+
+	/**
+	 * KUN_YOMI
+	 */
+	private String kunYomi;
+
+	/**
 	 * MEANING
 	 */
 	private String meaning;
@@ -68,6 +78,8 @@ public class KanjiDto implements Serializable {
 		vocabularyDto.setKanjiId(this.kanjiId);
 		vocabularyDto.setLessonCourseId(this.lessonCourseId);
 		vocabularyDto.setWord(this.word);
+		vocabularyDto.setOnYomi(this.onYomi);
+		vocabularyDto.setKunYomi(this.kunYomi);
 		vocabularyDto.setMeaning(this.meaning);
 		vocabularyDto.setWriteFile(this.writeFile);
 		vocabularyDto.setWriteFileStream(this.writeFileStream);
@@ -202,6 +214,34 @@ public class KanjiDto implements Serializable {
 	 */
 	public void setIsChange(Boolean isChange) {
 		this.isChange = isChange;
+	}
+
+	/**
+	 * @return the onYomi
+	 */
+	public String getOnYomi() {
+		return onYomi;
+	}
+
+	/**
+	 * @param onYomi the onYomi to set
+	 */
+	public void setOnYomi(String onYomi) {
+		this.onYomi = onYomi;
+	}
+
+	/**
+	 * @return the kunYomi
+	 */
+	public String getKunYomi() {
+		return kunYomi;
+	}
+
+	/**
+	 * @param kunYomi the kunYomi to set
+	 */
+	public void setKunYomi(String kunYomi) {
+		this.kunYomi = kunYomi;
 	}
 
 }

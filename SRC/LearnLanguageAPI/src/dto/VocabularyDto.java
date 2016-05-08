@@ -25,6 +25,11 @@ public class VocabularyDto implements Serializable {
 	private String word;
 
 	/**
+	 * KANJI
+	 */
+	private String kanji;
+
+	/**
 	 * MEANING
 	 */
 	private String meaning;
@@ -68,6 +73,7 @@ public class VocabularyDto implements Serializable {
 		vocabularyDto.setVocabularyId(this.vocabularyId);
 		vocabularyDto.setLessonCourseId(this.lessonCourseId);
 		vocabularyDto.setWord(this.word);
+		vocabularyDto.setKanji(this.kanji);
 		vocabularyDto.setMeaning(this.meaning);
 		vocabularyDto.setPronunceFile(this.pronunceFile);
 		vocabularyDto.setPronunceFileStream(this.pronunceFileStream);
@@ -202,6 +208,20 @@ public class VocabularyDto implements Serializable {
 	 */
 	public void setPronunceFileStream(byte[] pronunceFileStream) {
 		this.pronunceFileStream = pronunceFileStream;
+	}
+
+	/**
+	 * @return the kanji
+	 */
+	public String getKanji() {
+		return kanji;
+	}
+
+	/**
+	 * @param kanji the kanji to set
+	 */
+	public void setKanji(String kanji) {
+		this.kanji = kanji;
 	}
 
 }
