@@ -36,6 +36,7 @@ public class VocabularyService {
 			sqlQuery.append("   T3.VOCABULARY_ID \n");
 			sqlQuery.append("  ,T3.LESSON_COURSE_ID \n");
 			sqlQuery.append("  ,T3.WORD \n");
+			sqlQuery.append("  ,T3.KANJI \n");
 			sqlQuery.append("  ,T3.MEANING \n");
 			sqlQuery.append("  ,T3.PRONUNCE_FILE \n");
 			sqlQuery.append("  ,T3.EXPLAIN \n");
@@ -68,6 +69,7 @@ public class VocabularyService {
 				vocabularyDto.setVocabularyId(rs.getLong("VOCABULARY_ID"));
 				vocabularyDto.setLessonCourseId(rs.getLong("LESSON_COURSE_ID"));
 				vocabularyDto.setWord(rs.getString("WORD"));
+				vocabularyDto.setKanji(rs.getString("KANJI"));
 				vocabularyDto.setMeaning(rs.getString("MEANING"));
 				vocabularyDto.setPronunceFile(rs.getString("PRONUNCE_FILE"));
 				vocabularyDto.setExplain(rs.getString("EXPLAIN"));
@@ -214,6 +216,7 @@ public class VocabularyService {
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     `LESSON_COURSE_ID` \n");
 			sqlQuery.append("    ,`WORD` \n");
+			sqlQuery.append("    ,`KANJI` \n");
 			sqlQuery.append("    ,`MEANING` \n");
 			sqlQuery.append("    ,`PRONUNCE_FILE` \n");
 			sqlQuery.append("    ,`EXPLAIN` \n");
@@ -227,6 +230,7 @@ public class VocabularyService {
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
+			sqlQuery.append("    ,? \n");
 			sqlQuery.append("   ) \n");
 
 			// Create Statement
@@ -235,10 +239,11 @@ public class VocabularyService {
 			// Edit parameter
 			stmt.setLong(1, vocabularyDto.getLessonCourseId());
 			stmt.setString(2, vocabularyDto.getWord());
-			stmt.setString(3, vocabularyDto.getMeaning());
-			stmt.setString(4, vocabularyDto.getPronunceFile());
-			stmt.setString(5, vocabularyDto.getExplain());
-			stmt.setInt(6, vocabularyDto.getOrderIndex());
+			stmt.setString(3, vocabularyDto.getKanji());
+			stmt.setString(4, vocabularyDto.getMeaning());
+			stmt.setString(5, vocabularyDto.getPronunceFile());
+			stmt.setString(6, vocabularyDto.getExplain());
+			stmt.setInt(7, vocabularyDto.getOrderIndex());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();
@@ -273,6 +278,7 @@ public class VocabularyService {
 			sqlQuery.append(" UPDATE `T_VOCABULARY` \n");
 			sqlQuery.append(" SET \n");
 			sqlQuery.append("     `WORD` = ? \n");
+			sqlQuery.append("    ,`KANJI` = ? \n");
 			sqlQuery.append("    ,`MEANING` = ? \n");
 			sqlQuery.append("    ,`PRONUNCE_FILE` = ? \n");
 			sqlQuery.append("    ,`EXPLAIN` = ? \n");
@@ -285,11 +291,12 @@ public class VocabularyService {
 
 			// Edit parameter
 			stmt.setString(1, vocabularyDto.getWord());
-			stmt.setString(2, vocabularyDto.getMeaning());
-			stmt.setString(3, vocabularyDto.getPronunceFile());
-			stmt.setString(4, vocabularyDto.getExplain());
-			stmt.setInt(5, vocabularyDto.getOrderIndex());
-			stmt.setLong(6, vocabularyDto.getVocabularyId());
+			stmt.setString(2, vocabularyDto.getKanji());
+			stmt.setString(3, vocabularyDto.getMeaning());
+			stmt.setString(4, vocabularyDto.getPronunceFile());
+			stmt.setString(5, vocabularyDto.getExplain());
+			stmt.setInt(6, vocabularyDto.getOrderIndex());
+			stmt.setLong(7, vocabularyDto.getVocabularyId());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();

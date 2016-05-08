@@ -59,6 +59,8 @@ public class S_VocabularyMaster {
 
 	// TextField Word
 	private JTextField txtWord;
+	// TextField Kanji
+	private JTextField txtKanji;
 	// TextField Meaning
 	private JTextArea txtMeaning;
 	// TextField PronunceFile
@@ -104,7 +106,7 @@ public class S_VocabularyMaster {
 		frmVocabularyMaster = new JFrame();
 		frmVocabularyMaster.setResizable(false);
 		frmVocabularyMaster.setTitle("Vocabulary Master");
-		frmVocabularyMaster.setBounds(100, 100, 600, 620);
+		frmVocabularyMaster.setBounds(100, 100, 600, 720);
 		frmVocabularyMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmVocabularyMaster.getContentPane().setLayout(new BoxLayout(frmVocabularyMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -179,11 +181,11 @@ public class S_VocabularyMaster {
 			new Object[][] {
 			},
 			new String[] {
-				"Word", "Meaning", "Pronunce File", "Explain"
+				"Word", "Kanji", "Meaning", "Pronunce File", "Explain"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
-				String.class, String.class, String.class, String.class
+				String.class, String.class, String.class, String.class, String.class
 			};
 			@Override
 			public Class getColumnClass(int columnIndex) {
@@ -195,9 +197,10 @@ public class S_VocabularyMaster {
 			}
 		});
 		tblInfo.getColumnModel().getColumn(0).setPreferredWidth(100);
-		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(150);
-		tblInfo.getColumnModel().getColumn(2).setPreferredWidth(150);
-		tblInfo.getColumnModel().getColumn(3).setPreferredWidth(200);
+		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(60);
+		tblInfo.getColumnModel().getColumn(2).setPreferredWidth(100);
+		tblInfo.getColumnModel().getColumn(3).setPreferredWidth(120);
+		tblInfo.getColumnModel().getColumn(4).setPreferredWidth(120);
 		tblInfo.setEnabled(true);
 		tblInfo.setColumnSelectionAllowed(false);
 		tblInfo.setCellSelectionEnabled(false);
@@ -382,31 +385,45 @@ public class S_VocabularyMaster {
 		txtWord.setDocument(new JTextFieldLimit(50));
 		registerPanel.add(txtWord);
 
+		// Label lblKanji
+		JLabel lblKanji = new JLabel("Kanji");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblKanji, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblKanji, 40, SpringLayout.WEST, registerPanel);
+		registerPanel.add(lblKanji);
+
+		// TextField txtKanji
+		txtKanji = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, txtKanji, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, txtKanji, 130, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, txtKanji, 430, SpringLayout.WEST, registerPanel);
+		txtKanji.setDocument(new JTextFieldLimit(20));
+		registerPanel.add(txtKanji);
+
 		// Label lblMeaning
 		JLabel lblMeaning = new JLabel("Meaning");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblMeaning, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblMeaning, 80, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblMeaning, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblMeaning);
 
 		// TextField txtMeaning
 		txtMeaning = new JTextArea();
 		JScrollPane meaningScrollPane = new JScrollPane(txtMeaning);
-		sl_panel.putConstraint(SpringLayout.NORTH, meaningScrollPane, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, meaningScrollPane, 80, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, meaningScrollPane, 130, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, meaningScrollPane, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, meaningScrollPane, 140, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, meaningScrollPane, 430, SpringLayout.WEST, registerPanel);
 		txtMeaning.setDocument(new JTextFieldLimit(500));
 		registerPanel.add(meaningScrollPane);
 
 		// Label lblPronunceFile
 		JLabel lblPronunceFile = new JLabel("Pronunce File");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblPronunceFile, 120, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblPronunceFile, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblPronunceFile, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblPronunceFile);
 
 		// TextField txtPronunceFile
 		txtPronunceFile = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtPronunceFile, 120, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, txtPronunceFile, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtPronunceFile, 130, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtPronunceFile, 430, SpringLayout.WEST, registerPanel);
 		txtPronunceFile.setDocument(new JTextFieldLimit(100));
@@ -414,17 +431,19 @@ public class S_VocabularyMaster {
 
 		// Label lblExplain
 		JLabel lblExplain = new JLabel("Explain");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblExplain, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblExplain, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblExplain, 40, SpringLayout.WEST, registerPanel);
-//		registerPanel.add(lblExplain);
+		registerPanel.add(lblExplain);
 
 		// TextField txtExplain
 		txtExplain = new JTextArea();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtExplain, 110, SpringLayout.NORTH, registerPanel);
-		sl_panel.putConstraint(SpringLayout.WEST, txtExplain, 130, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.EAST, txtExplain, 430, SpringLayout.WEST, registerPanel);
-		txtExplain.setDocument(new JTextFieldLimit(100));
-//		registerPanel.add(txtExplain);
+		JScrollPane explainScrollPane = new JScrollPane(txtExplain);
+		sl_panel.putConstraint(SpringLayout.NORTH, explainScrollPane, 180, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, explainScrollPane, 130, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, explainScrollPane, 240, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, explainScrollPane, 430, SpringLayout.WEST, registerPanel);
+		txtExplain.setDocument(new JTextFieldLimit(500));
+		registerPanel.add(explainScrollPane);
 
 		// Initialize RegisterArea's button
 		initRegisterAreaButton();
@@ -444,9 +463,9 @@ public class S_VocabularyMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 250, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 180, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 280, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -458,9 +477,9 @@ public class S_VocabularyMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 250, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 180, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 280, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 
@@ -587,6 +606,7 @@ public class S_VocabularyMaster {
 		// Edit RegisterArea
 		editingVocabularyDto = vocabularyDtoList.get(selectedIndex).copy();
 		txtWord.setText(editingVocabularyDto.getWord());
+		txtKanji.setText(editingVocabularyDto.getKanji());
 		txtMeaning.setText(editingVocabularyDto.getMeaning());
 		txtPronunceFile.setText(editingVocabularyDto.getPronunceFile());
 		txtExplain.setText(editingVocabularyDto.getExplain());
@@ -677,6 +697,7 @@ public class S_VocabularyMaster {
 
 		// Edit SelectedData
 		editingVocabularyDto.setWord(txtWord.getText());
+		editingVocabularyDto.setKanji(txtKanji.getText());
 		editingVocabularyDto.setMeaning(txtMeaning.getText());
 		editingVocabularyDto.setPronunceFile(txtPronunceFile.getText());
 		editingVocabularyDto.setExplain(txtExplain.getText());
@@ -732,6 +753,7 @@ public class S_VocabularyMaster {
 			// Edit row data
 			List<Object> rowData = new ArrayList<Object>();
 			rowData.add(vocabularyDto.getWord());
+			rowData.add(vocabularyDto.getKanji());
 			rowData.add(vocabularyDto.getMeaning());
 			rowData.add(vocabularyDto.getPronunceFile());
 			rowData.add(vocabularyDto.getExplain());
@@ -781,6 +803,7 @@ public class S_VocabularyMaster {
 	 */
 	private void clearRegisterArea() {
 		txtWord.setText("");
+		txtKanji.setText("");
 		txtMeaning.setText("");
 		txtPronunceFile.setText("");
 		txtExplain.setText("");

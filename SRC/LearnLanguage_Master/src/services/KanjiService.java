@@ -36,6 +36,8 @@ public class KanjiService {
 			sqlQuery.append("   T3.KANJI_ID \n");
 			sqlQuery.append("  ,T3.LESSON_COURSE_ID \n");
 			sqlQuery.append("  ,T3.WORD \n");
+			sqlQuery.append("  ,T3.ON_YOMI \n");
+			sqlQuery.append("  ,T3.KUN_YOMI \n");
 			sqlQuery.append("  ,T3.MEANING \n");
 			sqlQuery.append("  ,T3.WRITE_FILE \n");
 			sqlQuery.append("  ,T3.EXPLAIN \n");
@@ -68,6 +70,8 @@ public class KanjiService {
 				kanjiDto.setKanjiId(rs.getLong("KANJI_ID"));
 				kanjiDto.setLessonCourseId(rs.getLong("LESSON_COURSE_ID"));
 				kanjiDto.setWord(rs.getString("WORD"));
+				kanjiDto.setOnYomi(rs.getString("ON_YOMI"));
+				kanjiDto.setKunYomi(rs.getString("KUN_YOMI"));
 				kanjiDto.setMeaning(rs.getString("MEANING"));
 				kanjiDto.setWriteFile(rs.getString("WRITE_FILE"));
 				kanjiDto.setExplain(rs.getString("EXPLAIN"));
@@ -214,6 +218,8 @@ public class KanjiService {
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     `LESSON_COURSE_ID` \n");
 			sqlQuery.append("    ,`WORD` \n");
+			sqlQuery.append("    ,`ON_YOMI` \n");
+			sqlQuery.append("    ,`KUN_YOMI` \n");
 			sqlQuery.append("    ,`MEANING` \n");
 			sqlQuery.append("    ,`WRITE_FILE` \n");
 			sqlQuery.append("    ,`EXPLAIN` \n");
@@ -227,6 +233,8 @@ public class KanjiService {
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
+			sqlQuery.append("    ,? \n");
+			sqlQuery.append("    ,? \n");
 			sqlQuery.append("   ) \n");
 
 			// Create Statement
@@ -235,10 +243,12 @@ public class KanjiService {
 			// Edit parameter
 			stmt.setLong(1, kanjiDto.getLessonCourseId());
 			stmt.setString(2, kanjiDto.getWord());
-			stmt.setString(3, kanjiDto.getMeaning());
-			stmt.setString(4, kanjiDto.getWriteFile());
-			stmt.setString(5, kanjiDto.getExplain());
-			stmt.setInt(6, kanjiDto.getOrderIndex());
+			stmt.setString(3, kanjiDto.getOnYomi());
+			stmt.setString(4, kanjiDto.getKunYomi());
+			stmt.setString(5, kanjiDto.getMeaning());
+			stmt.setString(6, kanjiDto.getWriteFile());
+			stmt.setString(7, kanjiDto.getExplain());
+			stmt.setInt(8, kanjiDto.getOrderIndex());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();
@@ -273,6 +283,8 @@ public class KanjiService {
 			sqlQuery.append(" UPDATE `T_KANJI` \n");
 			sqlQuery.append(" SET \n");
 			sqlQuery.append("     `WORD` = ? \n");
+			sqlQuery.append("    ,`ON_YOMI` = ? \n");
+			sqlQuery.append("    ,`KUN_YOMI` = ? \n");
 			sqlQuery.append("    ,`MEANING` = ? \n");
 			sqlQuery.append("    ,`WRITE_FILE` = ? \n");
 			sqlQuery.append("    ,`EXPLAIN` = ? \n");
@@ -285,11 +297,13 @@ public class KanjiService {
 
 			// Edit parameter
 			stmt.setString(1, kanjiDto.getWord());
-			stmt.setString(2, kanjiDto.getMeaning());
-			stmt.setString(3, kanjiDto.getWriteFile());
-			stmt.setString(4, kanjiDto.getExplain());
-			stmt.setInt(5, kanjiDto.getOrderIndex());
-			stmt.setLong(6, kanjiDto.getKanjiId());
+			stmt.setString(2, kanjiDto.getOnYomi());
+			stmt.setString(3, kanjiDto.getKunYomi());
+			stmt.setString(4, kanjiDto.getMeaning());
+			stmt.setString(5, kanjiDto.getWriteFile());
+			stmt.setString(6, kanjiDto.getExplain());
+			stmt.setInt(7, kanjiDto.getOrderIndex());
+			stmt.setLong(8, kanjiDto.getKanjiId());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();

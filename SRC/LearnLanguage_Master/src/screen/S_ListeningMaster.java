@@ -29,6 +29,7 @@ import dto.ComboItem;
 import dto.LessonDto;
 import dto.ListeningDto;
 import enums.EditMode;
+import enums.ListeningType;
 import enums.MoveType;
 import services.LessonService;
 import services.ListeningService;
@@ -57,10 +58,13 @@ public class S_ListeningMaster {
 	// Table info
 	private JTable tblInfo;
 
+	// Combobox ListeningType
+	@SuppressWarnings("rawtypes")
+	private JComboBox cbxListeningType;
 	// TextField ContentFile
 	private JTextField txtContentFile;
-	// TextField ContentTranslate
-	private JTextArea txtContentTranslate;
+	// TextField Content
+	private JTextArea txtContent;
 
 	// Button Back
 	private JButton btnBack;
@@ -100,7 +104,7 @@ public class S_ListeningMaster {
 		frmListeningMaster = new JFrame();
 		frmListeningMaster.setResizable(false);
 		frmListeningMaster.setTitle("Listening Master");
-		frmListeningMaster.setBounds(100, 100, 600, 590);
+		frmListeningMaster.setBounds(100, 100, 600, 620);
 		frmListeningMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmListeningMaster.getContentPane().setLayout(new BoxLayout(frmListeningMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -175,11 +179,11 @@ public class S_ListeningMaster {
 			new Object[][] {
 			},
 			new String[] {
-				"Content File", "Content Translate"
+				"Listening Type", "Content File", "Content Translate"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
-				String.class, String.class
+				String.class, String.class, String.class
 			};
 			@Override
 			public Class getColumnClass(int columnIndex) {
@@ -190,8 +194,9 @@ public class S_ListeningMaster {
 				return false;
 			}
 		});
-		tblInfo.getColumnModel().getColumn(0).setPreferredWidth(200);
-		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(400);
+		tblInfo.getColumnModel().getColumn(0).setPreferredWidth(150);
+		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(150);
+		tblInfo.getColumnModel().getColumn(2).setPreferredWidth(300);
 		tblInfo.setEnabled(true);
 		tblInfo.setColumnSelectionAllowed(false);
 		tblInfo.setCellSelectionEnabled(false);
@@ -347,6 +352,7 @@ public class S_ListeningMaster {
 	/**
 	 * Initialize RegisterArea.
 	 */
+	@SuppressWarnings("rawtypes")
 	private void initRegisterArea() {
 
 		// Create SpringLayout
@@ -362,15 +368,27 @@ public class S_ListeningMaster {
 		sl_panel.putConstraint(SpringLayout.EAST, separator, -10, SpringLayout.EAST, registerPanel);
 		registerPanel.add(separator);
 
+		// Label lblListeningType
+		JLabel lblListeningType = new JLabel("Listening Type");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblListeningType, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblListeningType, 40, SpringLayout.WEST, registerPanel);
+		registerPanel.add(lblListeningType);
+
+		// Combobox cbxListeningType
+		cbxListeningType = new JComboBox();
+		sl_panel.putConstraint(SpringLayout.NORTH, cbxListeningType, 15, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, cbxListeningType, 150, SpringLayout.WEST, registerPanel);
+		registerPanel.add(cbxListeningType);
+
 		// Label lblContentFile
 		JLabel lblContentFile = new JLabel("Content File");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentFile, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentFile, 50, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentFile, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentFile);
 
 		// TextField txtContentFile
 		txtContentFile = new JTextField();
-		sl_panel.putConstraint(SpringLayout.NORTH, txtContentFile, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, txtContentFile, 50, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, txtContentFile, 150, SpringLayout.WEST, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, txtContentFile, 450, SpringLayout.WEST, registerPanel);
 		txtContentFile.setDocument(new JTextFieldLimit(100));
@@ -378,18 +396,18 @@ public class S_ListeningMaster {
 
 		// Label lblContentTranslate
 		JLabel lblContentTranslate = new JLabel("Content Translate");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 50, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 80, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentTranslate, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentTranslate);
 
-		// TextField txtContentTranslate
-		txtContentTranslate = new JTextArea();
-		JScrollPane contentTranslateScrollPane = new JScrollPane(txtContentTranslate);
-		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 50, SpringLayout.NORTH, registerPanel);
+		// TextField txtContent
+		txtContent = new JTextArea();
+		JScrollPane contentTranslateScrollPane = new JScrollPane(txtContent);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 80, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, contentTranslateScrollPane, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 110, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 140, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, contentTranslateScrollPane, 450, SpringLayout.WEST, registerPanel);
-		txtContentTranslate.setDocument(new JTextFieldLimit(500));
+		txtContent.setDocument(new JTextFieldLimit(500));
 		registerPanel.add(contentTranslateScrollPane);
 
 		// Initialize RegisterArea's button
@@ -410,9 +428,9 @@ public class S_ListeningMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 120, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -424,9 +442,9 @@ public class S_ListeningMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 120, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 
@@ -445,6 +463,14 @@ public class S_ListeningMaster {
 				new ComboItem(
 					lessonDto.getLessonId(), lessonDto.getLessonName());
 			cbxLesson.addItem(item);
+		}
+
+		// ListeningType
+		for (ListeningType listeningType : ListeningType.values()) {
+			ComboItem item =
+					new ComboItem(
+							listeningType.getCode(), listeningType.getLabel());
+			cbxListeningType.addItem(item);
 		}
 
 	}
@@ -552,8 +578,9 @@ public class S_ListeningMaster {
 
 		// Edit RegisterArea
 		editingListeningDto = listeningDtoList.get(selectedIndex).copy();
+		ComponentUtil.selectItem(cbxListeningType, editingListeningDto.getListeningType());
 		txtContentFile.setText(editingListeningDto.getContentFile());
-		txtContentTranslate.setText(editingListeningDto.getContentTranslate());
+		txtContent.setText(editingListeningDto.getContent());
 
 		// Enable RegisterArea
 		enableRegisterArea();
@@ -639,9 +666,12 @@ public class S_ListeningMaster {
 			return;
 		}
 
+		ComboItem selectedListeningType = (ComboItem) cbxListeningType.getSelectedItem();
+
 		// Edit SelectedData
+		editingListeningDto.setListeningType(StringUtil.cnvToString(selectedListeningType.getValue()));
 		editingListeningDto.setContentFile(txtContentFile.getText());
-		editingListeningDto.setContentTranslate(txtContentTranslate.getText());
+		editingListeningDto.setContent(txtContent.getText());
 		editingListeningDto.setIsChange(true);
 
 		// Edit Data List
@@ -693,8 +723,9 @@ public class S_ListeningMaster {
 		for (ListeningDto listeningDto : listeningDtoList) {
 			// Edit row data
 			List<Object> rowData = new ArrayList<Object>();
+			rowData.add(ListeningType.getListeningType(listeningDto.getListeningType()));
 			rowData.add(listeningDto.getContentFile());
-			rowData.add(listeningDto.getContentTranslate());
+			rowData.add(listeningDto.getContent());
 
 			// Add row
 			tableModel.addRow(rowData.toArray());
@@ -734,8 +765,9 @@ public class S_ListeningMaster {
 	 * Clear RegisterArea
 	 */
 	private void clearRegisterArea() {
+		cbxListeningType.setSelectedIndex(0);
 		txtContentFile.setText("");
-		txtContentTranslate.setText("");
+		txtContent.setText("");
 		editMode = null;
 	}
 
@@ -756,8 +788,8 @@ public class S_ListeningMaster {
 		ComponentUtil.enableComponents(registerPanel, true);
 		btnBack.setEnabled(true);
 
-		// Focus Listening Name
-		txtContentFile.requestFocus();
+		// Focus Listening Type
+		cbxListeningType.requestFocus();
 	}
 
 	/**
