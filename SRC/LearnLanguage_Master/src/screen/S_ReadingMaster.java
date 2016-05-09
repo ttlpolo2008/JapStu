@@ -18,6 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
 import javax.swing.border.LineBorder;
@@ -56,6 +57,8 @@ public class S_ReadingMaster {
 	// Table info
 	private JTable tblInfo;
 
+	// TextField Title
+	private JTextField txtTitle;
 	// TextField Content
 	private JTextArea txtContent;
 	// TextField ContentPron
@@ -101,7 +104,7 @@ public class S_ReadingMaster {
 		frmReadingMaster = new JFrame();
 		frmReadingMaster.setResizable(false);
 		frmReadingMaster.setTitle("Reading Master");
-		frmReadingMaster.setBounds(100, 100, 600, 590);
+		frmReadingMaster.setBounds(100, 100, 600, 630);
 		frmReadingMaster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmReadingMaster.getContentPane().setLayout(new BoxLayout(frmReadingMaster.getContentPane(), BoxLayout.X_AXIS));
 
@@ -176,11 +179,11 @@ public class S_ReadingMaster {
 			new Object[][] {
 			},
 			new String[] {
-				"Content", "Content Pronunce", "Content Translate"
+				"Title", "Content", "Content Pronunce", "Content Translate"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
-				String.class, String.class, String.class
+				String.class, String.class, String.class, String.class
 			};
 			@Override
 			public Class getColumnClass(int columnIndex) {
@@ -191,9 +194,10 @@ public class S_ReadingMaster {
 				return false;
 			}
 		});
-		tblInfo.getColumnModel().getColumn(0).setPreferredWidth(150);
-		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(150);
-		tblInfo.getColumnModel().getColumn(2).setPreferredWidth(200);
+		tblInfo.getColumnModel().getColumn(0).setPreferredWidth(80);
+		tblInfo.getColumnModel().getColumn(1).setPreferredWidth(120);
+		tblInfo.getColumnModel().getColumn(2).setPreferredWidth(120);
+		tblInfo.getColumnModel().getColumn(3).setPreferredWidth(180);
 		tblInfo.setEnabled(true);
 		tblInfo.setColumnSelectionAllowed(false);
 		tblInfo.setCellSelectionEnabled(false);
@@ -364,50 +368,64 @@ public class S_ReadingMaster {
 		sl_panel.putConstraint(SpringLayout.EAST, separator, -10, SpringLayout.EAST, registerPanel);
 		registerPanel.add(separator);
 
+		// Label lblTitle
+		JLabel lblTitle = new JLabel("Title");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblTitle, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblTitle, 40, SpringLayout.WEST, registerPanel);
+		registerPanel.add(lblTitle);
+
+		// TextField txtTitle
+		txtTitle = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, txtTitle, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.WEST, txtTitle, 150, SpringLayout.WEST, registerPanel);
+		sl_panel.putConstraint(SpringLayout.EAST, txtTitle, 450, SpringLayout.WEST, registerPanel);
+		txtTitle.setDocument(new JTextFieldLimit(30));
+		registerPanel.add(txtTitle);
+
 		// Label lblContent
 		JLabel lblContent = new JLabel("Content");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContent, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContent, 50, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContent, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContent);
 
 		// TextField txtContent
 		txtContent = new JTextArea();
 		JScrollPane contentScrollPane = new JScrollPane(txtContent);
-		sl_panel.putConstraint(SpringLayout.NORTH, contentScrollPane, 20, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentScrollPane, 50, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, contentScrollPane, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, contentScrollPane, 80, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentScrollPane, 110, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, contentScrollPane, 450, SpringLayout.WEST, registerPanel);
 		txtContent.setDocument(new JTextFieldLimit(500));
 		registerPanel.add(contentScrollPane);
 
 		// Label lblContentPron
 		JLabel lblContentPron = new JLabel("Content Pronunce");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentPron, 90, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentPron, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentPron, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentPron);
 
 		// TextField txtContentPron
 		txtContentPron = new JTextArea();
 		JScrollPane contentPronScrollPane = new JScrollPane(txtContentPron);
-		sl_panel.putConstraint(SpringLayout.NORTH, contentPronScrollPane, 90, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentPronScrollPane, 120, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, contentPronScrollPane, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, contentPronScrollPane, 150, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentPronScrollPane, 180, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, contentPronScrollPane, 450, SpringLayout.WEST, registerPanel);
 		txtContentPron.setDocument(new JTextFieldLimit(500));
 		registerPanel.add(contentPronScrollPane);
 
 		// Label lblContentTranslate
 		JLabel lblContentTranslate = new JLabel("Content Translate");
-		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 160, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, lblContentTranslate, 190, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, lblContentTranslate, 40, SpringLayout.WEST, registerPanel);
 		registerPanel.add(lblContentTranslate);
 
 		// TextField txtContentTranslate
 		txtContentTranslate = new JTextArea();
 		JScrollPane contentTranslateScrollPane = new JScrollPane(txtContentTranslate);
-		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 160, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, contentTranslateScrollPane, 190, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, contentTranslateScrollPane, 150, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 220, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, contentTranslateScrollPane, 250, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, contentTranslateScrollPane, 450, SpringLayout.WEST, registerPanel);
 		txtContentTranslate.setDocument(new JTextFieldLimit(500));
 		registerPanel.add(contentTranslateScrollPane);
@@ -430,9 +448,9 @@ public class S_ReadingMaster {
 				actOK();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 230, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnOK, 260, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnOK, 220, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 250, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnOK, 290, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnOK, 300, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnOK);
 
@@ -444,9 +462,9 @@ public class S_ReadingMaster {
 				actCancel();
 			}
 		});
-		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 230, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.NORTH, btnCancel, 260, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.WEST, btnCancel, 310, SpringLayout.WEST, registerPanel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 250, SpringLayout.NORTH, registerPanel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, btnCancel, 290, SpringLayout.NORTH, registerPanel);
 		sl_panel.putConstraint(SpringLayout.EAST, btnCancel, 390, SpringLayout.WEST, registerPanel);
 		registerPanel.add(btnCancel);
 
@@ -572,6 +590,7 @@ public class S_ReadingMaster {
 
 		// Edit RegisterArea
 		editingReadingDto = readingDtoList.get(selectedIndex).copy();
+		txtTitle.setText(editingReadingDto.getTitle());
 		txtContent.setText(editingReadingDto.getContent());
 		txtContentPron.setText(editingReadingDto.getContentPron());
 		txtContentTranslate.setText(editingReadingDto.getContentTranslate());
@@ -661,6 +680,7 @@ public class S_ReadingMaster {
 		}
 
 		// Edit SelectedData
+		editingReadingDto.setTitle(txtTitle.getText());
 		editingReadingDto.setContent(txtContent.getText());
 		editingReadingDto.setContentPron(txtContentPron.getText());
 		editingReadingDto.setContentTranslate(txtContentTranslate.getText());
@@ -715,6 +735,7 @@ public class S_ReadingMaster {
 		for (ReadingDto readingDto : readingDtoList) {
 			// Edit row data
 			List<Object> rowData = new ArrayList<Object>();
+			rowData.add(readingDto.getTitle());
 			rowData.add(readingDto.getContent());
 			rowData.add(readingDto.getContentPron());
 			rowData.add(readingDto.getContentTranslate());
@@ -757,6 +778,7 @@ public class S_ReadingMaster {
 	 * Clear RegisterArea
 	 */
 	private void clearRegisterArea() {
+		txtTitle.setText("");
 		txtContent.setText("");
 		txtContentPron.setText("");
 		txtContentTranslate.setText("");
@@ -781,8 +803,8 @@ public class S_ReadingMaster {
 		ComponentUtil.enableComponents(registerPanel, true);
 		btnBack.setEnabled(true);
 
-		// Focus Reading Name
-		txtContent.requestFocus();
+		// Focus Title
+		txtTitle.requestFocus();
 	}
 
 	/**

@@ -34,6 +34,7 @@ public class ReadingService {
 			sqlQuery.append(" SELECT \n");
 			sqlQuery.append("   T3.READING_ID \n");
 			sqlQuery.append("  ,T3.LESSON_COURSE_ID \n");
+			sqlQuery.append("  ,T3.TITLE \n");
 			sqlQuery.append("  ,T3.CONTENT \n");
 			sqlQuery.append("  ,T3.CONTENT_PRON \n");
 			sqlQuery.append("  ,T3.CONTENT_TRANSLATE \n");
@@ -65,6 +66,7 @@ public class ReadingService {
 				ReadingDto readingDto = new ReadingDto();
 				readingDto.setReadingId(rs.getLong("READING_ID"));
 				readingDto.setLessonCourseId(rs.getLong("LESSON_COURSE_ID"));
+				readingDto.setTitle(rs.getString("TITLE"));
 				readingDto.setContent(rs.getString("CONTENT"));
 				readingDto.setContentPron(rs.getString("CONTENT_PRON"));
 				readingDto.setContentTranslate(rs.getString("CONTENT_TRANSLATE"));
@@ -204,6 +206,7 @@ public class ReadingService {
 			sqlQuery.append(" INSERT INTO `T_READING` \n");
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     `LESSON_COURSE_ID` \n");
+			sqlQuery.append("    ,`TITLE` \n");
 			sqlQuery.append("    ,`CONTENT` \n");
 			sqlQuery.append("    ,`CONTENT_PRON` \n");
 			sqlQuery.append("    ,`CONTENT_TRANSLATE` \n");
@@ -216,6 +219,7 @@ public class ReadingService {
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
 			sqlQuery.append("    ,? \n");
+			sqlQuery.append("    ,? \n");
 			sqlQuery.append("   ) \n");
 
 			// Create Statement
@@ -223,10 +227,11 @@ public class ReadingService {
 
 			// Edit parameter
 			stmt.setLong(1, readingDto.getLessonCourseId());
-			stmt.setString(2, readingDto.getContent());
-			stmt.setString(3, readingDto.getContentPron());
-			stmt.setString(4, readingDto.getContentTranslate());
-			stmt.setInt(5, readingDto.getOrderIndex());
+			stmt.setString(2, readingDto.getTitle());
+			stmt.setString(3, readingDto.getContent());
+			stmt.setString(4, readingDto.getContentPron());
+			stmt.setString(5, readingDto.getContentTranslate());
+			stmt.setInt(6, readingDto.getOrderIndex());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();
@@ -260,7 +265,8 @@ public class ReadingService {
 			StringBuffer sqlQuery = new StringBuffer();
 			sqlQuery.append(" UPDATE `T_READING` \n");
 			sqlQuery.append(" SET \n");
-			sqlQuery.append("     `CONTENT` = ? \n");
+			sqlQuery.append("     `TITLE` = ? \n");
+			sqlQuery.append("    ,`CONTENT` = ? \n");
 			sqlQuery.append("    ,`CONTENT_PRON` = ? \n");
 			sqlQuery.append("    ,`CONTENT_TRANSLATE` = ? \n");
 			sqlQuery.append("    ,`ORDER_INDEX` = ? \n");
@@ -271,11 +277,12 @@ public class ReadingService {
 			PreparedStatement stmt = conn.prepareStatement(sqlQuery.toString());
 
 			// Edit parameter
-			stmt.setString(1, readingDto.getContent());
-			stmt.setString(2, readingDto.getContentPron());
-			stmt.setString(3, readingDto.getContentTranslate());
-			stmt.setInt(4, readingDto.getOrderIndex());
-			stmt.setLong(5, readingDto.getReadingId());
+			stmt.setString(1, readingDto.getTitle());
+			stmt.setString(2, readingDto.getContent());
+			stmt.setString(3, readingDto.getContentPron());
+			stmt.setString(4, readingDto.getContentTranslate());
+			stmt.setInt(5, readingDto.getOrderIndex());
+			stmt.setLong(6, readingDto.getReadingId());
 
 			// Execute SQL
 			int cnt = stmt.executeUpdate();

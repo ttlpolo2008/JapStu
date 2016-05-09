@@ -20,14 +20,14 @@ public class ConversationDto implements Serializable {
 	private Long lessonCourseId;
 
 	/**
+	 * TITLE
+	 */
+	private String title;
+
+	/**
 	 * CONTENT
 	 */
 	private String content;
-
-	/**
-	 * CONTENT_TRANSLATE
-	 */
-	private String contentTranslate;
 
 	/**
 	 * CONTENT_FILE
@@ -62,8 +62,8 @@ public class ConversationDto implements Serializable {
 		ConversationDto vocabularyDto = new ConversationDto();
 		vocabularyDto.setConversationId(this.conversationId);
 		vocabularyDto.setLessonCourseId(this.lessonCourseId);
+		vocabularyDto.setTitle(this.title);
 		vocabularyDto.setContent(this.content);
-		vocabularyDto.setContentTranslate(this.contentTranslate);
 		vocabularyDto.setContentFile(this.contentFile);
 		vocabularyDto.setOrderIndex(this.orderIndex);
 		vocabularyDto.setIsChange(this.isChange);
@@ -111,20 +111,6 @@ public class ConversationDto implements Serializable {
 	 */
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	/**
-	 * @return the contentTranslate
-	 */
-	public String getContentTranslate() {
-		return contentTranslate;
-	}
-
-	/**
-	 * @param contentTranslate the contentTranslate to set
-	 */
-	public void setContentTranslate(String contentTranslate) {
-		this.contentTranslate = contentTranslate;
 	}
 
 	/**
@@ -181,6 +167,20 @@ public class ConversationDto implements Serializable {
 	 */
 	public void setIsChange(Boolean isChange) {
 		this.isChange = isChange;
+	}
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

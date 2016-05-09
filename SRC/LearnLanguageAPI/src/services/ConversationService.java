@@ -35,8 +35,8 @@ public class ConversationService {
 			sqlQuery.append(" SELECT \n");
 			sqlQuery.append("   T3.CONVERSATION_ID \n");
 			sqlQuery.append("  ,T3.LESSON_COURSE_ID \n");
+			sqlQuery.append("  ,T3.TITLE \n");
 			sqlQuery.append("  ,T3.CONTENT \n");
-			sqlQuery.append("  ,T3.CONTENT_TRANSLATE \n");
 			sqlQuery.append("  ,T3.CONTENT_FILE \n");
 			sqlQuery.append("  ,T3.ORDER_INDEX \n");
 			sqlQuery.append(" FROM \n");
@@ -66,8 +66,8 @@ public class ConversationService {
 				ConversationDto conversationDto = new ConversationDto();
 				conversationDto.setConversationId(rs.getLong("CONVERSATION_ID"));
 				conversationDto.setLessonCourseId(rs.getLong("LESSON_COURSE_ID"));
+				conversationDto.setTitle(rs.getString("TITLE"));
 				conversationDto.setContent(rs.getString("CONTENT"));
-				conversationDto.setContentTranslate(rs.getString("CONTENT_TRANSLATE"));
 				conversationDto.setContentFile(rs.getString("CONTENT_FILE"));
 				conversationDto.setOrderIndex(rs.getInt("ORDER_INDEX"));
 
@@ -211,8 +211,8 @@ public class ConversationService {
 			sqlQuery.append(" INSERT INTO `T_CONVERSATION` \n");
 			sqlQuery.append("   ( \n");
 			sqlQuery.append("     `LESSON_COURSE_ID` \n");
+			sqlQuery.append("    ,`TITLE` \n");
 			sqlQuery.append("    ,`CONTENT` \n");
-			sqlQuery.append("    ,`CONTENT_TRANSLATE` \n");
 			sqlQuery.append("    ,`CONTENT_FILE` \n");
 			sqlQuery.append("    ,`ORDER_INDEX` \n");
 			sqlQuery.append("   ) \n");
@@ -230,8 +230,8 @@ public class ConversationService {
 
 			// Edit parameter
 			stmt.setLong(1, conversationDto.getLessonCourseId());
-			stmt.setString(2, conversationDto.getContent());
-			stmt.setString(3, conversationDto.getContentTranslate());
+			stmt.setString(2, conversationDto.getTitle());
+			stmt.setString(3, conversationDto.getContent());
 			stmt.setString(4, conversationDto.getContentFile());
 			stmt.setInt(5, conversationDto.getOrderIndex());
 
@@ -267,8 +267,8 @@ public class ConversationService {
 			StringBuffer sqlQuery = new StringBuffer();
 			sqlQuery.append(" UPDATE `T_CONVERSATION` \n");
 			sqlQuery.append(" SET \n");
-			sqlQuery.append("     `CONTENT` = ? \n");
-			sqlQuery.append("    ,`CONTENT_TRANSLATE` = ? \n");
+			sqlQuery.append("     `TITLE` = ? \n");
+			sqlQuery.append("    ,`CONTENT` = ? \n");
 			sqlQuery.append("    ,`CONTENT_FILE` = ? \n");
 			sqlQuery.append("    ,`ORDER_INDEX` = ? \n");
 			sqlQuery.append(" WHERE \n");
@@ -278,8 +278,8 @@ public class ConversationService {
 			PreparedStatement stmt = conn.prepareStatement(sqlQuery.toString());
 
 			// Edit parameter
-			stmt.setString(1, conversationDto.getContent());
-			stmt.setString(2, conversationDto.getContentTranslate());
+			stmt.setString(1, conversationDto.getTitle());
+			stmt.setString(2, conversationDto.getContent());
 			stmt.setString(3, conversationDto.getContentFile());
 			stmt.setInt(4, conversationDto.getOrderIndex());
 			stmt.setLong(5, conversationDto.getConversationId());

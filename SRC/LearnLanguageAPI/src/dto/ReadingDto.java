@@ -20,6 +20,11 @@ public class ReadingDto implements Serializable {
 	private Long lessonCourseId;
 
 	/**
+	 * TITLE
+	 */
+	private String title;
+
+	/**
 	 * CONTENT
 	 */
 	private String content;
@@ -57,6 +62,7 @@ public class ReadingDto implements Serializable {
 		ReadingDto vocabularyDto = new ReadingDto();
 		vocabularyDto.setReadingId(this.readingId);
 		vocabularyDto.setLessonCourseId(this.lessonCourseId);
+		vocabularyDto.setTitle(this.title);
 		vocabularyDto.setContent(this.content);
 		vocabularyDto.setContentPron(this.contentPron);
 		vocabularyDto.setContentTranslate(this.contentTranslate);
@@ -162,6 +168,20 @@ public class ReadingDto implements Serializable {
 	 */
 	public void setIsChange(Boolean isChange) {
 		this.isChange = isChange;
+	}
+
+	/**
+	 * @return the title
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }
