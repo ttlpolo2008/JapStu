@@ -890,7 +890,7 @@ public class S_ExerciseMaster {
 		txtQuestionContent.setText("");
 		txtQuestionContentFile.setText("");
 		txtMark.setText("2");
-		txtTime.setText("");
+		txtTime.setText("45");
 		chkAnswer1.setSelected(false);
 		chkAnswer2.setSelected(false);
 		chkAnswer3.setSelected(false);
