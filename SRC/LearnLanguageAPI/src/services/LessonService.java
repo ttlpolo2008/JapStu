@@ -96,19 +96,26 @@ public class LessonService {
 			sqlQuery.append("   T_LESSON \n");
 			sqlQuery.append(" WHERE \n");
 			sqlQuery.append("       1 = 1 \n");
-			sqlQuery.append("  AND LESSON_NO = ( \n");
-			sqlQuery.append("                   SELECT \n");
-			sqlQuery.append("                     LESSON_NO + 1 \n");
-			sqlQuery.append("                   FROM \n");
-			sqlQuery.append("                     T_LESSON T1 \n");
-			sqlQuery.append("                   WHERE \n");
-			sqlQuery.append("                         1 = 1 \n");
-			sqlQuery.append("                     AND LESSON_ID = ? \n");
-			sqlQuery.append("                  ) \n");
+
+			if (lessonId == null) {
+				sqlQuery.append("  AND LESSON_NO = 1 \n");
+			} else {
+				sqlQuery.append("  AND LESSON_NO = ( \n");
+				sqlQuery.append("                   SELECT \n");
+				sqlQuery.append("                     LESSON_NO + 1 \n");
+				sqlQuery.append("                   FROM \n");
+				sqlQuery.append("                     T_LESSON T1 \n");
+				sqlQuery.append("                   WHERE \n");
+				sqlQuery.append("                         1 = 1 \n");
+				sqlQuery.append("                     AND LESSON_ID = ? \n");
+				sqlQuery.append("                  ) \n");
+			}
 
 			// Create Statement
 			stmt = conn.prepareStatement(sqlQuery.toString());
-			stmt.setLong(1, lessonId);
+			if (lessonId != null) {
+				stmt.setLong(1, lessonId);
+			}
 
 			// Execute query
 			rs = stmt.executeQuery();

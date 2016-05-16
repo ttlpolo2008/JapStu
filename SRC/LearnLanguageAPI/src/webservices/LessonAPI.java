@@ -68,26 +68,24 @@ public class LessonAPI {
 		try {
 			// Get parameter
 			JsonObject body = jsonParser.parse(requestBody).getAsJsonObject();
-			if (!body.has("lessonId")) {
-				// If parameter is not exist, error 001
-				result.addProperty("ERR001", Constants.ERR_001);
+
+			// Get LessonId
+			Long lessonId = null;
+			if (body.has("lessonId")) {
+				lessonId = body.get("lessonId").getAsLong();
+			}
+
+			// Find Lesson
+			LessonDto lessonDto = LessonService.findNextLesson(lessonId);
+			if (lessonDto == null) {
+				// If can not find lesson, error 002
+				result.addProperty("ERR002", Constants.ERR_002);
 
 			} else {
-				// Get LessonId
-				Long lessonId = body.get("lessonId").getAsLong();
-
-				// Find Lesson
-				LessonDto lessonDto = LessonService.findNextLesson(lessonId);
-				if (lessonDto == null) {
-					// If can not find lesson, error 002
-					result.addProperty("ERR002", Constants.ERR_002);
-
-				} else {
-					// Edit selected data
-					Gson gson = new Gson();
-					String jsonData = gson.toJson(lessonDto);
-					result.add("data", jsonParser.parse(jsonData));
-				}
+				// Edit selected data
+				Gson gson = new Gson();
+				String jsonData = gson.toJson(lessonDto);
+				result.add("data", jsonParser.parse(jsonData));
 			}
 
 		} catch(Exception ex) {
