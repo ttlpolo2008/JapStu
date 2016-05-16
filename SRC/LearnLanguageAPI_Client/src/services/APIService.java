@@ -144,7 +144,9 @@ public class APIService {
 
 			// Create body
 			JsonObject body = new JsonObject();
-			body.addProperty("lessonId", lessonId);
+			if (lessonId != null) {
+				body.addProperty("lessonId", lessonId);
+			}
 
 			// Call SearchAPI
 			JsonObject result =
