@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="fb:app_id" content="361297944007558" />
+<meta property="og:image" content="http://lophoctiengnhat.com/public/images/layout/Logo_OK.png" />
+<link rel="shortcut icon" href="public/favicon.ico"> 
+<base href="http://lophoctiengnhat.com">
+<title>Lỗi 404! - Học tiếng Nhật trực tuyến ver3.0-trường Việt Nhật</title>
+<meta content="Website học tiếng Nhật trực tuyến phiên bản 3.0 của trường Việt Nhật, cung cấp các bài học, các Video bài giảng tiếng Nhật Online các cấp độ, Luyện thi năng lực tiếng Nhật cấp độ N5, N4, N3, N2, N1" name="description">
+<meta content="Học tiếng Nhật trực tuyến, luyện thi tiếng Nhật, Đề thi tiếng Nhật, tài liệu tiếng Nhật, học hán tự, trung tâm học tiếng Nhật, Tự học tiếng Nhật" name="keywords">
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/plugins.js"></script>
+<script type="text/javascript" src="public/dist/lhtn.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="public/dist/lhtn.min.css"/>
+</head><body>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '361297944007558', // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+    };
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+</script><div id="page-bg" class ="">
+	<a id="tc_button" class="sometext" href=""><span class="fa icon-search"></span>Tra cứu</a>
+<div id="header">
+<div id="header-coltrol">
+<a href="/" title="Học tiếng Nhật trực tuyến - luyện thi tiếng Nhật trường Nhật Ngữ Việt Nhật" id="logo"><img src="public/images/layout/logo.png" width="41" height="41" alt="logo" /></a>
+<div id="search-wrap"> <!-- [Tra cứu] - Begin -->
+<form id="search-form" action="tra-cuu.html" method="post">
+    <div id="sch-left">
+        <input type="text" id="search-text" placeholder="Nhập từ tra cứu..." name="search-text" value="">
+        <input name="search-type" type="hidden" id="search-type" value="1">
+    </div>
+    <div id="sch-right">
+        <div id="sch-type-wrap">
+            <span id="sch-type">Từ điển</span>
+            <ul id="sch-type-items">
+                <li class="sch-type-item"><a href="javascript:void(0)" rel="1">Từ điển</a></li><li class="sch-type-item"><a href="javascript:void(0)" rel="2">Bài học</a></li>            </ul>
+        </div>
+        <input type="submit" name="search-bt" value="Tra cứu" id="search-bt">
+    </div>
+</form>
+</div>  <!-- [Tra cứu] - end --><div id="person-wrapper">
+    <div id="person-info" style="float:left">
+        <a title="Click để vào trang cá nhân" href="ca-nhan.html" id="person-name">van thanh long</a>
+        <div id="person-status">Bạn còn <strong>7</strong> ngày VIP</div>
+        <a title="Click để xem tin nhắn" href="ca-nhan/tin-nhan.html" id="person-notice">Bạn có <span class="msgNum"> 0</span> tin nhắn mới</a>
+    </div>
+    <div id="person-avatar"><a title="Click để vào trang cá nhân" href="ca-nhan.html"><img src="avt/35/35/e9v945o3gjh6.png"></a>
+        <div id="extend-info">
+          <div id="extend-info-inner">
+                <div id="big-name">van thanh long</div>
+              <div style="overflow:hidden">
+                <div id="big-avatar"><img src="avt/90/120/e9v945o3gjh6.png"></div>
+                <div id="big-info">
+                    
+                    <div id="big-status">Bạn còn <strong>7</strong> ngày VIP</div>
+                    <div id="newMsgIcon"><a href="ca-nhan/tin-nhan.html"><span class="fa icon-envelope big-ico"></span> <span  class="msgNum">0</span> tin nhắn mới</a>
+                    </div>
+                    <div><span class="fa icon-star big-ico"></span> 0 Credits</div>
+                    <div><span class="fa icon-gift big-ico"></span> 0</div>
+                    <div><span class="fa icon-group big-ico"></span> 0</div>
+                    <div id="user-panel-act">
+                        <a title="Kích hoạt VIP" href="javascript:void(0)" class="user-panel-button hasTip vip-show"><span class="fa icon-asterisk">VIP</span></a>
+                        <a title="Nạp credits" href="javascript:void(0)" class="user-panel-button hasTip cre-show"><span class="fa icon-star">Credit</span></a>
+                    </div>
+                </div>
+                <div id="big-details" class="clearfix">
+                	<div id="visit-title">Các bài học truy cập gần nhất: </div>
+                    <ul>
+                    <li><a title="8 phút trước" href="danh-sach-tu-vung-mntvb03p1.html">Danh sách từ vựng (MNTVB03P1) </a></li><li><a title="11 phút trước" href="danh-sach-tu-vung-mntvb04p1.html">Danh sách từ vựng (MNTVB04P1) </a></li><li><a title="17 phút trước" href="danh-sach-tu-vung-mntvb05p1.html">Danh sách từ vựng (MNTVB05P1) </a></li><li><a title="20 phút trước" href="danh-sach-tu-vung-mntvb06p1.html">Danh sách từ vựng (MNTVB06P1) </a></li><li><a title="22 phút trước" href="danh-sach-tu-vung-mntvb07p1.html">Danh sách từ vựng (MNTVB07P1) </a></li>                    </ul>
+                </div>
+             </div>
+             <div id="user-panel-buttons">
+                <a href="logout.php" class="user-panel-button logout"><span class="fa icon-power-off">Đăng xuất</span></a>
+                <a href="ca-nhan.html" class="user-panel-button"><span class="fa icon-user">Cá nhân</span></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+    
+</div></div>
+<div id="header-menu">
+    <ul id="main-menu" class="clearfix">
+        <li>
+            <a id="home" href="/">
+                <span class="fa icon-home" style="font-size:16px"></span>
+            </a>
+        </li>
+        <li><a href="online.html">Lớp Online Giáo Viên</a></li><li><a href="lop-hoc-tieng-nhat-online-lop-tu-hoc-theo-giao-trinh.html">Lớp học theo giáo trình</a></li><li><a href="lop-hoc-tieng-nhat-online-lop-tu-hoc-theo-ngay.html">Khoá học theo ngày</a></li><li><a href="trac-nghiem-tieng-nhat.html">Luyện Thi Trắc Nghiệm</a></li><li><a href="hoi-dap.html">Hỏi - Đáp</a></li>    </ul>
+            <div id="topIcons">
+    	        	<a id="topIconMsgNum" href="ca-nhan/tin-nhan.html"><span class="fa icon-envelope big-ico"></span> <span class="msgNum">0</span></a>
+        	<a title="Đăng xuất khỏi tài khoản" href="logout.php"><span class="fa icon-power-off"></span></a>
+            <a title="Click để vào trang cá nhân" href="ca-nhan.html"><strong>van thanh long</strong></a>
+		
+		    </div>
+    <div style="overflow:hidden; clear:both"></div>
+
+<div id="toolbar" class="clearfix" style="height:30px">
+	<div id="lession-title">
+		<div id="quick-menu">
+	<div id="quick-icon">
+		<div class="quick-bar"></div>
+		<div class="quick-bar"></div>
+		<div class="quick-bar"></div>
+	</div>
+</div><a id="fullscreen" title="Chế độ toàn màn hình" class="arc-control txt" href="javascript:;" style="margin-right:3px"> 
+     <span class="fa icon-fullscreen" style="margin:0"></span>
+     <span id="full-txt" style="font-size:12px"></span>
+</a> 
+<a title="In trang này" onClick="window.print();" class="arc-control" href="javascript:;" style="margin-right:1px"> <span class="fa icon-print"></span></a>        
+<a id="v-keyboard" title="Bật/tắt bàn phím ảo hỗ trợ gõ tiếng Nhật" class="arc-control" href="javascript:;" style="margin-right:1px"><span class="fa icon-keyboard-o"></span></a><a id="an-menu" title="Ẩn chọn Menu trái" class="arc-control txt" href="javascript:;" style=" float:left"> 
+ <span class="fa icon-caret-left" style="margin-right:3px"></span>
+ <span id="an-text" style="font-size:12px">ẨN MENU TRÁI</span>
+ <span class="fa icon-caret-right" style="margin-left:3px"></span>
+</a> 
+<div class="fb-like" style="" data-href="http://lophoctiengnhat.com/public/lesson/kotoba/minna/b03/vn_45%20.mp3" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+<div class="googleplus">
+<div class="g-plusone" data-size="medium"></div>
+</div>	</div>  
+</div>
+
+
+
+    
+    
+     
+</div>
+
+</div>
+<div id="head-sep"></div>
+
+<div id="left-menu" style="background:none">
+    <div id="left-menu-inside">
+                
+        
+<ul class="icon-ul" id="askMain">
+	<li class="askTypeItem"><i class="icon-li fa icon-folder-open"></i><a rel="97" href="#"><strong class="askcatTxt">Lớp Học Tiếng Nhật</strong></a>
+	<ul class="askTypeSub icon-ul">
+		<li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-1" href="#detail-link-1">Lớp học theo giáo trình</a></li>
+        <li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-2" href="#detail-link-2">Lớp học theo cấp độ</a></li>
+        <li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-3" href="#detail-link-3">Lớp học theo chuyên đề</a></li>
+        <li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-4" href="#detail-link-4">Học online với giáo viên</a></li>
+        <li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-5" href="#detail-link-5">Luyện thi trắc nghiệm</a></li>
+        <li class="askTypeItem"><span class="icon-li">-</span><a class="homedt" id="homedt-6" href="#detail-link-6">Đề thi trắc nghiệm</a></li>
+
+	</ul>
+	</li>
+	<li class="askTypeItem"><i class="icon-li fa icon-folder-open"></i><a rel="108" href="http://lophoctiengnhat.com/ca-nhan.html"><strong class="askcatTxt">Trang cá nhân</strong></a>
+	<ul class="askTypeSub icon-ul" style="display: block;">
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="109" href="http://lophoctiengnhat.com/ca-nhan.html"><span class="askcatTxt">Trang cá nhân của bạn</span></a></li>
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="110" href="http://lophoctiengnhat.com/ca-nhan/lich-su-giao-dich.html"><span class="askcatTxt">Lịch sử giao dịch</span></a></li>
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="111" href="http://lophoctiengnhat.com/ca-nhan/tin-nhan.html"><span class="askcatTxt">Tin nhắn của bạn</span></a></li>
+	</ul>
+	</li>
+	<li class="askTypeItem"><i class="icon-li fa icon-folder-open"></i><a rel="5" href="http://lophoctiengnhat.com/ho-tro-website-lophoctiengnhat.html"><strong class="askcatTxt">Support</strong></a>
+	<ul class="askTypeSub icon-ul">
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="38" href="http://lophoctiengnhat.com/huong-dan-su-dung-website-lophoctiengnhat.html"><span class="askcatTxt">Hướng Dẫn sử dụng Website</span></a></li>
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="50" href="http://lophoctiengnhat.com/mot-so-cau-hoi-thuong-gap-khi-su-dung-website-lophoctiengnhatcom.html"><span class="askcatTxt">Các vấn đề thường hỏi</span></a></li>
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="51" href="http://lophoctiengnhat.com/bang-hoc-phi-nang-cap-vip.html"><span class="askcatTxt">Hướng dẫn nâng cấp VIP</span></a></li>
+		<li class="askTypeItem"><span class="icon-li">-</span><a rel="52" href="http://lophoctiengnhat.com/dang-ky.html"><span class="askcatTxt">Đăng ký thành viên</span></a></li>
+	</ul>
+	</li>
+</ul>
+        
+	</div>
+</div>	<div id="main-content-wrap">
+				<div id="main-content" class="clearfix">
+			<div id="lession-wrapper">
+	<p style="color:#EF0D10; font-size:11px; font-weight: bold; text-align:center;">Website ra mắt phiên bản mới Ver 3.5 vào ngày 15/8/2015. <a href="http://lophoctiengnhat.com/thong-bao-ra-mat-phien-ban-moi-ver35-website-lophoctiengnhatcom.html" target="new"> Xem chi tiết</a></P>
+	<a id="restore" title="Chế độ bình thường"  href="javascript:;" class="arc-control txt">
+		<span class="fa icon-resize-small"></span>
+	</a>
+	<div id="lession-cotent" class="clearfix">	
+		<h1 id="arc-title">Lỗi 404!<span class="small-hide">-Website học tiếng Nhật trực tuyến</span></h1>		        
+        
+                
+        
+		<div id="infoMsg" style=" padding-right:28px; width:130px">
+			<span></span>
+			<a href="javascript:;" class="x-icon closeBox" rel="infoMsg" id="newMsgClose"></a>
+		</div>
+		<div class="frame4">
+<div class="frame-inside" style="border:0; background:#E1EDF7; line-height:normal">
+	<h2>&nbsp;</h2>
+	<h2><strong>Nếu bạn truy cập từ Phiên bản 2.7 hãy thử lại:</strong></h2>
+<h2> <a href="http://old.lophoctiengnhat.com/public/lesson/kotoba/minna/b03/vn_45%20.mp3" title="Link Fix lỗi ver2.7 website lophoctiengnhat.com" target="_self">Click vào đây</a>.</h2>
+	<p>&nbsp;</p>
+	<div id="lipsum">
+	  <blockquote>
+	    <h2>&nbsp;</h2>
+	    <h2>&nbsp;</h2>
+	    <h2>&nbsp;</h2>
+      </blockquote>
+	  <h2><strong>Lỗi! Đường dẫn không tồn tại! </strong></h2>
+	  <p>Trang của bạn đang xem có thể đã bị xóa, thay đổi đường dẫn hoặc tạm thời khóa.</p>
+	  <p>Để thử lại bạn làm theo các hướng dẫn sau:</p>
+	  <ul>
+	    <li>Nếu bạn gõ từ thanh địa chỉ, xin hãy chắc chắn bạn đã gõ đúng.</li>
+	    <li> Nếu bạn truy cập từ Website lophoctiengnhat.com phiên bản 2.7, bạn vui lòng Click vào đây để thử lại vào bài học: <a href="http://old.lophoctiengnhat.com/public/lesson/kotoba/minna/b03/vn_45%20.mp3">Click vào đây</a>.</li>
+	    <li>Nếu bạn truy cập từ 1 đường Link từ 1 trang khác trỏ đến, có thể đường Link này đã thay đổi, bạn chọn truy cập từ chính Website lophoctiengnhat.com theo các thanh toolbar bên trên.</li>
+      </ul>
+	  <p>Nếu bạn vẫn không vào được theo các cách trên, vui lòng liên hệ với ban quản trị website:</p>
+	  <ul>
+	    <li>    Qua Email: <a href="maito:admin@lophoctiengnhat.com">admin@lophoctiengnhat.com </a>- <a href="mailto:lophoctiengnhat.com@gmail.com">lophoctiengnhat.com@gmail.com </a></li>
+	    <li> Qua Facebook: <a href="https://facebook.com/lophoctiengnhat.com2014" target="_blank">https://facebook.com/lophoctiengnhat.com2014</a></li>
+	    <li> Qua comment trực tiếp trên website này: Click vào đây.</li>
+	    <li> Qua tin nhắn liên hệ Admin: Click vào đây.</li>
+	    <li> Hỗ trợ Offline: tại trường ngoại ngữ Việt Nhật (8A- Cư xá Phan Đăng Lưu - Phường 3- Bình Thạnh- TP.HCM)</li>
+      </ul>
+	  <p>&nbsp;</p>
+    </div>
+	<p>&nbsp;</p>
+
+</div>
+</div>
+<div class="frame4">
+<div class="frame-inside" style="border:0; width:80%; float:right"><img src="public/images/layout/404.png" alt="404-error"></div>
+</div>
+
+	</div>
+</div>
+
+<div id="right-menu" class="clearfix">
+
+
+
+
+
+    <a class="right-link long" href="http://old.lophoctiengnhat.com" target="new">
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-reply"></span>
+                <span class="right-txt">
+                    <span class="right-big">Trở về</span>
+                    <span class="right-small">Phiên bản cũ 2.7</span>
+                </span>
+            </span>
+        </span>
+    </a>
+        <a class="right-link long" href="bang-hoc-phi-nang-cap-vip.html" target="new">
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-bullhorn"></span>
+                <span class="right-txt"> 
+                    <span class="right-big">Học Phí</span>
+                    <span class="right-small">Đóng học phí nâng cấp VIP</span>
+                </span>
+            </span>
+        </span>
+    </a>
+    
+    <a class="right-link short cre-show" href="javascript:;" >
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-money"></span>
+                <span class="right-txt">
+                    <span class="right-small">Nạp credit</span>
+                </span>
+            </span>
+        </span>
+    </a>
+    
+
+    
+    <a class="right-link short vip-show" href="javascript:;" >
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-star"></span>
+                <span class="right-txt">
+                    <span class="right-small">Nâng cấp VIP</span>
+                </span>
+            </span>
+        </span>
+    </a>
+    
+    
+    <a class="right-link short" href="http://lophoctiengnhat.com/ca-nhan/hysBoLrZgG-pO9qOI_wOmR5mYWp_E71SNHl7ENc-8gc.html">
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-envelope-o"></span>
+                <span class="right-txt">
+                    <span class="right-small">Liên hệ Admin</span>
+                </span>
+            </span>
+        </span>
+    </a>
+    
+    
+    <a class="right-link short" href="javascript:void(0)">
+        <span class="right-link-inner">
+            <span class="right-link-content">
+                <span class="fa icon-bullhorn"></span>
+                <span class="right-txt">
+                    <span class="right-small">Thông báo</span>
+                </span>
+            </span>
+        </span>
+    </a>
+         <div id="fb-wrap" class="clearfix">
+        <div id="fb">
+             <div class="fb-like-box" data-href="https://www.facebook.com/Lophoctiengnhat.comOnline" data-width="232" data-height="The pixel height of the plugin" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div> 
+        </div>
+    </div>
+	
+        
+    <a class="right-link long" href="http://ngoainguvietnhat.com/">
+        <span class="right-link-inner">
+            <span class="right-link-content" >
+            	<span class="fa icon-book"></span>
+                <span class="right-txt">
+                    <span class="right-big">Học Offline</span>
+                    <span class="right-small">Trường Việt Nhật - TP.HCM</span>
+                </span>
+            </span>
+        </span>
+    </a>
+        
+    <a class="right-link long" href="http://nhatbanduhoc.com">
+        <span class="right-link-inner">
+            <span class="right-link-content" >
+            	<span class="fa icon-globe"></span>
+                <span class="right-txt">
+                    <span class="right-big">Du Học</span>
+                    <span class="right-small">Du Học Trường Việt Nhật</span>
+                </span>
+            </span>
+        </span>
+    </a>
+        <div class="clearfix"></div>
+    <div id="visit-wrap" class="clearfix" style="background:#FFF; border:1px solid #ccc;">
+    	<table id="visit-table" style="margin:5px;" cellpadding="3">
+	<tr>
+    	<td><span class="fa icon-user" style="color:#090"></span></td>
+    	<td>Thành viên online:</td>
+        <td>19</td>
+    </tr>
+    <tr>
+    	<td><span class="fa icon-user" style="color:#999"></td>
+    	<td>Khách online:</td>
+        <td>50</td>
+    </tr>
+    <tr>
+    	<td><span class="fa icon-user" style="color:#000"></td>
+    	<td>Hôm nay:</td>
+        <td>61.212</td>
+    </tr>
+    <tr>
+    	<td><span class="fa icon-group" style="color:#2076B8"></td>
+    	<td>Hôm qua:</td>
+        <td>42.114</td>
+    </tr>
+    
+    <tr>
+    	<td><span class="fa icon-group" style="color:#900"></td>
+    	<td>Tổng truy cập:</td>
+        <td>10.777.796</td>
+    </tr>
+</table>    </div>
+    
+</div>
+		</div>
+	</div>   
+			<div id="loading"><span><img src="../public/images/layout/loader.png" width="48" height="16"  alt=""/> <b class="blink">Đang xử lý</b></span></div> 
+    
+    <div id="head-sep"></div>
+    <div >        
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Quảng cáo 2 -->
+				<ins class="adsbygoogle"
+					 style="display:inline-block;width:728px;height:90px"
+					 data-ad-client="ca-pub-5256912961140375"
+					 data-ad-slot="3336482045"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+     </div>
+	 <div id="head-sep"></div>
+
+
+    <div id="foot-wrapper">
+                       
+  <div style="color:#FFF; text-align:center">
+            <p>Bản quyền thuộc về <a href="http://ngoainguvietnhat.com/" style="color:#FFC"><strong>trường ngoại ngữ Việt Nhật</strong></a> <br>
+            Đ/C: 8A - Cư xá Phan Đăng Lưu - P.3 - Q. Bình Thạnh - TP.HCM <br>
+            ĐT: (08)35 100 555 - Hotline: 0937 465 159 <br>
+            Email: admin@lophoctiengnhat.com - lophoctiengnhat.com@gmail.com</p>
+            <p><a style="color:#900" href="mobile">Phiên bản dành cho điện thoại</a> </p>
+    </div>
+    </div>
+    
+
+</div>
+<a href="javascript:void(0)" id="chat-open">Chat!</a>
+<div id="chat-box">
+<div id="chat-title">
+Xin chào <b>van thanh long</b>	<a id="chat-close" href="javascript:void(0)"></a>
+</div>
+    <div id="container">
+    	<div id="bbcode-wrap">
+            <div id="emopic">
+            	            </div>
+        </div>
+      <div id="content">
+            <div id="chat-cont"><ul></ul> </div>
+        
+        <form id="chatForm">
+        <textarea id="chat-noidung" name="post" type="text" placeholder="Nhập nội dung chat.  Enter để gửi, Shift + Enter để xuống dòng."></textarea>
+        <input id="send" name="send" type="button" value="" />
+        <input  type="text" style="display:none"></input>
+        <input type="hidden" name="chat-name" id="chat-name" value="van thanh long"/>
+        </form>
+              </div><!--/content-->
+     
+    </div><!--/container-->
+</div><div id="vip_che" class="dl-che">
+	<div id="vip-wrap" class="dl-wrap">
+		<div id="vip-title" class="dl-title">
+			 Nâng cấp VIP <a href="javascript:void(0)" class="dl-close" id="vip-close"><span class="fa icon-times"></span></a>
+		</div>
+		<div id="vip-form" class="dl-form">
+        	            <h4>
+            Nâng cấp VIP để xem toàn bộ nội dung website, không giới hạn lượt xem, không giới hạn bài xem.
+            <h4><span style="color:#F00">(1 Credit = 1000 đồng.)</span></h4>
+                                <h3>Bạn đang có <span style="color:#900">0 Credits.</span></h3>
+            
+			<div class="khung-wrapper tc dk">
+                    <div class="khung-title">
+                         Bạn có thể lựa chọn nâng cấp một trong các gói Vip sau:
+                    </div>
+                    <div class="khung-content" style="margin-bottom:10px">
+                        <div class="clearfix">
+                            
+                                <table class="khung-full xanh" style="margin-bottom:0">
+                                <tr>
+                                    <th>Gói vip</th>
+                                    <th>Credit cần dùng</th>
+                                    <th>Thời hạn (ngày)</th>
+                                    <th>Nâng cấp</th>
+                                    
+                                </tr>
+                                <tr><td>Vip 15 ngày</td><td>50 credits</td><td align="center">15</td><td align="center"><span>Không đủ credit để nâng cấp</span>. <a href="javascript:;" class="cre-show">Nạp credit</a>.</td></tr><tr><td>Vip 6 tháng</td><td>300 credits</td><td align="center">180</td><td align="center"><span>Không đủ credit để nâng cấp</span>. <a href="javascript:;" class="cre-show">Nạp credit</a>.</td></tr><tr><td>Vip 1 năm </td><td>500 credits</td><td align="center">360</td><td align="center"><span>Không đủ credit để nâng cấp</span>. <a href="javascript:;" class="cre-show">Nạp credit</a>.</td></tr><tr><td>Vip 2 năm</td><td>900 credits</td><td align="center">720</td><td align="center"><span>Không đủ credit để nâng cấp</span>. <a href="javascript:;" class="cre-show">Nạp credit</a>.</td></tr><tr><td>Vip 3 năm </td><td>1200 credits</td><td align="center">1080</td><td align="center"><span>Không đủ credit để nâng cấp</span>. <a href="javascript:;" class="cre-show">Nạp credit</a>.</td></tr>                                </table></div> </div>
+                                <p>Bạn không đủ credit để nâng cấp? Vui lòng click <a href="javascript:;" class="cre-show">vào đây để nạp Credit</a>.
+                            
+                            
+                                                   
+                          
+                   
+                                </p>
+                                <p>Xem khung giá VIP và hướng dẫn nạp-nâng cấp VIP Click <a href="huong-dan-nap-credit.html" target="_blank">vào đây để xem hướng dẫn</a>.</p>
+			</div>
+                
+
+                
+        </div>
+    </div>
+</div><div id="credit_che" class="dl-che">
+	<div id="credit-wrap" class="dl-wrap">
+		<div id="credit-title" class="dl-title">
+			 Nạp credit <a href="javascript:void(0)" class="dl-close" id="cre-close"><span class="fa icon-times"></span></a>
+			<span id="cre_loading"><span class="fa icon-spin icon-refresh">Đang xử lý...</span></span>
+		</div>
+		<div id="cre-form" class="dl-form">
+			<div class="dl-error success" id="cre-error">
+            	<span class="fa"></span>
+                <span id="cre-msg"></span>
+			</div>
+            
+ 
+ <p style="color:#F00">Vui lòng lưu ý<a href="bang-hoc-phi-nang-cap-vip.html"> Click vào đây</a> để xem bảng giá nâng cấp VIP trước khi nạp thẻ. </em></p>           
+                
+                <div class="khung-wrapper tc dk">
+                    <div class="khung-title">
+                         Cách 1: Nạp thẻ VIP lophoctiengnhat.com:
+                    </div>
+                    <div class="khung-content">
+                        <div class="clearfix">
+							<form id="vipcard_form" method="post" class="clearfix">
+                                <div class="dn_textbox" style="width:78%; float:left">
+                                    <span class="dn_icon"><span class="fa icon-lock"></span></span>
+                                    <input placeholder="Nhập mã thẻ" type="text" id="vipCode" name="txtCode" class="dn_text" >
+                                    <input type="hidden" value="" name="txtSeri">
+                                    <input type="hidden" value="4" name="lstTelco" autocomplete="off">
+                                </div>
+                                <a href="javascript:;" onclick="return napTheVIP();" class="dl_submit"><span class="fa icon-plus">Nạp thẻ</span></a>
+                            </form>
+                            <p><a href="huong-dan-mua-the-cao-lophoctiengnhatcom.html">Click vào đây</a> để xem các đại lý phân phối thẻ VIP lophoctiengnhat.com </em></p>
+                        </div>
+                    </div>
+                </div>
+            
+
+			<div class="khung-wrapper tc dk" >
+				<div class="khung-title">
+					 Cách 2: Nạp bằng thẻ điện thoại:
+				</div>
+				<div class="khung-content">
+					<div class="clearfix">
+						<form id="cre_form" method="post">
+							<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									<div class="dn_textbox" style="width:99%">
+										<span class="dn_icon"><span class="fa icon-key"></span></span>
+										<input placeholder="Số seri" type="text" id="txtSeri" value="" name="txtSeri" class="dn_text">
+									</div>
+								</td>
+								<td>
+									<div class="dn_textbox">
+										<span class="dn_icon"><span class="fa icon-lock"></span></span>
+										<input placeholder="Mã thẻ (dưới lớp bạc)" type="text" id="txtCode" value="" name="txtCode" class="dn_text">
+									</div>
+								</td>
+							</tr>
+							</table>
+                                                        <a style="font-style:italic; font-size:12px; font-weight:bold; color:#F03; opacity:0.8">Vui lòng chọn nhà mạng:</a><br>
+							<a class="dl_chk lstTelco" rel="1" href="javascript:;">
+							<span class="dl_chk_ico"><span class="fa"></span></span>
+							Viettel </a>
+							<a class="dl_chk lstTelco" rel="2" href="javascript:;">
+							<span class="dl_chk_ico"><span class="fa"></span></span>
+							Mobi </a>
+							<a class="dl_chk lstTelco" rel="3" href="javascript:;">
+							<span class="dl_chk_ico"><span class="fa"></span></span>
+							Vina</a>
+                            
+                            						  <input type="hidden" value="0" id="lstTelco" name="lstTelco" autocomplete="off">
+							<a href="javascript:;" onclick="return napCredit();" class="dl_submit"><span class="fa icon-plus">Nạp credit</span></a>
+						</form>
+                        <p><em><strong style="color:#900">Lưu ý:</strong> </em></p>
+                        <ul style="padding: 0px 0px 0px 15px; font-size: 12px; list-style:square">
+                          <li>Để biết chính xác vị trí <strong>số seri</strong> và <strong>mã thẻ</strong>, xin vui lòng <a 
+                          href="public/images/layout/thedt.jpg" target="new">click vào đây</a> để xem hình hướng dẫn.</li>
+                          <li>Hỗ trợ nạp thẻ, bạn  vui lòng comment tại đây <a 
+                          href="http://lophoctiengnhat.com/ho-tro-nap-credit-va-nang-cap-vip.html" target="_blank">click vào đây</a>
+                          </li>
+                        </ul>
+					</div>
+				</div>
+                
+                
+                
+				<div class="khung-wrapper tc dk">
+					<div class="khung-title">
+						 Cách 3: Nạp Credit và kích hoạt VIP qua tài khoản ngân hàng:
+					</div>
+                    
+					<div class="khung-content">
+						<div class="clearfix">
+							 Bạn có thể nạp credit băng tài khoản ngân hàng hoặc thẻ ATM.<br/>
+							Click vào đây để xem thông tin chuyển khoản:  <a 
+                            href="http://lophoctiengnhat.com/huong-dan-nap-credit.html" target="_blank">vào đây để xem hướng dẫn</a>.<br/>
+</div>
+					</div>
+               </div>     
+                <div class="khung-wrapper tc dk">
+					<div class="khung-title">
+						 
+                         Cách 4: Nạp trực tiếp tại Trường Ngoại Ngữ Việt Nhật:
+					</div>
+                    
+					<div class="khung-content">
+						<div class="clearfix">
+							 Bạn có thể nạp credit băng tài khoản ngân hàng hoặc thẻ ATM.<br/>
+							Click vào đây để xem thông tin chuyển khoản:  <a 
+                            href="http://lophoctiengnhat.com/huong-dan-nap-credit.html" target="_blank">vào đây để xem hướng dẫn</a>.<br/>
+</div>
+					</div>
+               </div> 
+                
+				
+			</div>
+        </div>
+    </div>
+</div><div  class="dl-che" id="testScoreWrapper">
+	<div  class="dl-wrap" style="background:#FFF">
+		<div class="dl-title" id="credit-title">
+			 Kết quả kiểm tra <a id="test-close" class="dl-close" href="javascript:void(0)"><span class="fa icon-times"></span></a>
+		</div>
+        <div id="fbShared" class="infoMsg">Bạn đã chia sẻ kế quả kiểm tra trên Facebook</strong></div>
+                        <div id="fbNoShared" class="errorMsg">Chia sẻ không thành công.</div>
+        <div class="khung-wrapper tc dk">
+        	<div class="khung-title"> Kết quà kiểm tra: </div>
+            <div class="khung-content">
+                <div id="testResult" style="display:block;">
+                    <table style="width:38%">
+                        <tr>
+                            <td>Tổng số câu hỏi:</td>
+                            <td><span id="testTotal"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Số câu sai:</td>
+                            <td><span id="testWrong"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Điểm:</td>
+                            <td><span id="testReScore"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Số câu đã làm:</td>
+                            <td><span id="testDone"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Số câu đúng:</td>
+                            <td><span id="testRight"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Kết quả: </td>
+                            <td> <span id="testReResult"></span></td>
+                        </tr>
+                    </table>
+                    <div style="float:right; width:60%">
+                       <img src="" id="testScoreImg">
+                    </div>
+                 </div>    
+            </div>
+        </div>  
+        <div id="FBShare" class="khung-wrapper tc dk">
+            <div class="khung-title">Chia sẻ kết quả trên Facebook: </div>
+            <div class="khung-content">
+                <div id="fbshare" style="clear:both; overflow:hidden">
+           			<textarea id="fbShareTxt" placeholder="Nhập thông tin bạn muốn chia sẻ" 
+                    style="width:100%; padding:5px; font-family:sans-serif; font-size:12px"></textarea>
+                    <a href="javascript:;" onclick="facebook();"
+                    class="button" id="fbShareBt" style="float:right;">
+                    <i class="fa icon-facebook-square" style="font-size:14px"></i>
+                    &nbsp;&nbsp;&nbsp;Chia sẻ
+                    </a>
+                    
+                    <a href="javascript:;" id="fbShareDis"
+                    class="button" style="float:right; background:#666; display:none">
+                    <i class="fa icon-spin icon-spinner" style="font-size:14px"></i>
+                    &nbsp;&nbsp;&nbsp;Chia sẻ
+                    </a>
+			 	</div>
+             </div>
+        </div>
+                <div id="testTimeCount" class="clearfix">
+            <div class="khung-wrapper tc dk">
+                <div class="khung-title">Thông báo: </div>
+                <div class="khung-content">
+                    <span id="testThongbao">Vui lòng quay lại bài học trước và chờ 15 phút để làm lại. </span><br>
+                    Thời gian còn lại: 
+                    <strong><span id="testedRemainMin">15</span> : <span id="testedRemainSec">00</span></strong>
+                </div>
+            </div>
+        </div>
+                	</div>
+</div><div id="tc_wrap">
+<div id="tc_inside">
+	<span id="tc_loading"><span class="fa icon-spin icon-refresh">Đang xử lý...</span></span>
+	<a href="javascript:;" id="tc_close"><span class="fa icon-times"></span></a>
+	<div id="tc_head">
+    	<ul>
+        	<li><a id="tc_tab_1" class="active" rel="1" href="javascript:;">Hán tự</a></li>
+            <li><a id="tc_tab_5" class="" rel="5" href="javascript:;">Ngữ pháp</a></li>
+            <li><a id="tc_tab_2" class="" rel="2" href="javascript:;">Nhật - Việt</a></li>
+            <li><a id="tc_tab_3" class="" rel="3" href="javascript:;">Việt - Nhật</a></li>
+            <li><a id="tc_tab_6" class="" rel="6" href="javascript:;">Mẫu câu</a></li>
+            <li><a id="tc_tab_4" class="" rel="4" href="javascript:;">Playlist</a></li>
+            <li><a id="tc_tab_7" class="" rel="7" href="javascript:;">Người dùng</a></li>
+        </ul>
+    </div>
+    <div id="tc_result">Kết quả tra cứu cho từ khóa <span id="tc_val"></span>
+    <div id="tc_typing" style="float:right"><input id="tc_input" placeholder="Nhập từ cần tra và gõ Enter..." type="text" style="padding: 3px 5px; width: 220px; font-size: 12px; font-family: sans-serif;"></div>
+    </div>
+    
+    <div class="khung-wrapper tc" id="tc_pages_wrap" style="clear:both">
+        <div class="khung-title">Các kết quả khác: </div>
+        <div class="khung-content" id="tc_pages">
+        </div>
+   </div>
+    <div id="tc_scroll">
+	<div id="tc"></div>
+    </div>
+    <div class="khung-wrapper tc"  id="tc_old" style="clear:both">
+        <div class="khung-title">Các từ đã tra gần đây: </div>
+        <div class="khung-content"><span  id="tc_old_cont"></span>
+        </div>
+   </div>
+</div>
+</div><script>
+
+	function chatChecking(){
+		$chatUsers = Array();
+		$chatCurr = Array();
+		$chatUsers = $.parseJSON($.cookie('chat'));
+		//console.log($chatUsers);
+		if($('.pmContent').length > 0)$('.pmContent').each(function(index, element) {$chatCurr.push($(this).attr('rel'));});
+		if(!!$chatUsers){
+			$.each($chatUsers, function(index, value){
+				if($chatCurr.indexOf(value) == -1)$.get('ajax/userInfo/getName.php?u='+value,function($data){addChat(value,$data)})
+			})
+		}
+		//alert('checking...');
+			
+	}
+	function addChat($code,$name){
+		var $chatUser = Array();
+		//alert($code + $name);
+		//Nếu chưa có khung chat => tạo khung
+		if($('#pmWrap').length == 0)$('body').append('<div id="pmWrap"><div id="pmList"><ul></ul></div><div id="pmContentWrap"></div></div>');
+		
+		
+		//Nếu chưa có cookie => tự tạo mảng
+		if($.cookie('chat') == null) $chatUser[0] = $code;
+		
+		//Nếu đã có cookie => xử lý cookie
+		else {
+			$chatCurr = Array();
+			if($('.pmContent').length > 0)$('.pmContent').each(function(index, element) {$chatCurr.push($(this).attr('rel'));});
+			if($chatCurr.indexOf($code) != -1 && $chatCurr.length > 0) return false;
+			$chatUsers = $.parseJSON($.cookie('chat'));
+			$.each($chatUsers, function (index, value) {$chatUser[index] = value});
+			$chatUser.push($code);
+		}
+		
+		var $key = '';
+		
+		$.each($chatUser, function(key, value){if(value == $code) $key = key;});
+		$chatJson = JSON.stringify($chatUser);
+		$.cookie('chat', $chatJson,{path: '/'});
+		
+		$('#pmList .active').removeClass('active');
+		$('.pmContent').hide();
+		
+		var app  = '';
+			app += '<li id="cList';
+			app += $key;
+			app += '" rel="';
+			app += $key;
+			app += '" class="active">';
+			app += $name;
+			app += '<a href="javascript:;" rel="';
+			app += $key;
+			app += '"><span class="fa icon-times"></span></a></li>';
+		//alert(app);	
+		var cont = '';
+			cont += '<div class="pmContent" id="chat';
+			cont += $key;
+			cont += '" style="display:block" rel="';
+			cont += $code;
+			cont += '">';
+			cont += '<iframe name="chatFrame';
+			cont += $key;
+			
+			cont += '" id="chatFrame';
+			cont += $key;
+			cont += '" frameborder="0" scrolling="no"';
+			cont += 'src="chat/';
+			
+			cont += $code;
+			
+			cont += '.html#bottom" width="100%" height="310px"></iframe></div>';
+		
+		$('#pmList ul').append(app);
+		$('#pmContentWrap').append(cont);
+		
+		chatInit();
+	}
+	function chatInit(){
+		$('#pmList li').click(function(e) {
+			var rel = $(this).attr('rel');
+			
+			$('#pmList .active').removeClass('active');
+			$(this).addClass('active');
+			
+			$('.pmContent').hide();
+			$('#chat'+rel).show();
+			
+			var $f = $("#chatFrame"+rel);
+			window.frames['chatFrame'+rel].ScrollDown();
+		}).children().click(function(e) {
+			$chatUser = Array();
+			rel= $(this).attr('rel');
+
+			$('#chat'+rel).remove();
+			$('#cList'+rel).remove();
+			$chatUsers = $.parseJSON($.cookie('chat'));
+			$.each($chatUsers, function (index, value) {$chatUser[index] = value;});
+			$chatUser.splice(rel, 1);
+			$chatJson = JSON.stringify($chatUser);
+			$.cookie('chat', $chatJson,{path: '/'});
+			if($('.pmContent').length == 0) {
+				$('#pmWrap').remove();
+				$.cookie('chat', null, {expires: -1 ,path: '/'});
+			}else{
+				$('.pmContent:first-child').show();
+				$('#pmList li:first-child').addClass('active');
+			}
+			return false;
+		});
+	}
+
+	$(document).ready(function(e) {
+		chatInit();
+		setInterval(function(){chatChecking()},10000);
+	})
+</script>
+ 
+</body>
+</html>
+
+
