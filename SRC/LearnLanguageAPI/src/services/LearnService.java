@@ -78,19 +78,22 @@ public class LearnService {
 			// Create SQL
 			StringBuffer sqlQuery = new StringBuffer();
 			sqlQuery.append(" SELECT \n");
-			sqlQuery.append("   LEARN_ID \n");
-			sqlQuery.append("  ,LESSON_ID \n");
-			sqlQuery.append("  ,START_DATE \n");
-			sqlQuery.append("  ,END_DATE \n");
-			sqlQuery.append("  ,STATUS \n");
-			sqlQuery.append("  ,COURSE_STATUS \n");
-			sqlQuery.append("  ,EXAM_MARK \n");
+			sqlQuery.append("   T1.LEARN_ID \n");
+			sqlQuery.append("  ,T1.LESSON_ID \n");
+			sqlQuery.append("  ,T1.START_DATE \n");
+			sqlQuery.append("  ,T1.END_DATE \n");
+			sqlQuery.append("  ,T1.STATUS \n");
+			sqlQuery.append("  ,T1.COURSE_STATUS \n");
+			sqlQuery.append("  ,T1.EXAM_MARK \n");
+			sqlQuery.append("  ,T2.LESSON_NAME \n");
 			sqlQuery.append(" FROM \n");
-			sqlQuery.append("   T_LEARN_" + userId + " \n");
+			sqlQuery.append("   T_LEARN_" + userId + " T1 \n");
+			sqlQuery.append("  ,T_LESSON T2 \n");
 			sqlQuery.append(" WHERE \n");
 			sqlQuery.append("       1 = 1 \n");
+			sqlQuery.append("   AND T1.LESSON_ID = T2.LESSON_ID \n");
 			sqlQuery.append(" ORDER BY \n");
-			sqlQuery.append("   LEARN_ID \n");
+			sqlQuery.append("   T1.LEARN_ID \n");
 
 			// Create Statement
 			stmt = conn.prepareStatement(sqlQuery.toString());
@@ -107,6 +110,7 @@ public class LearnService {
 				learnDto.setStatus(rs.getBoolean("STATUS"));
 				learnDto.setCourseStatus(rs.getString("COURSE_STATUS"));
 				learnDto.setExamMark(rs.getLong("EXAM_MARK"));
+				learnDto.setLessonName(rs.getString("LESSON_NAME"));
 
 				// Add Dto to List
 				studyList.add(learnDto);
@@ -145,19 +149,22 @@ public class LearnService {
 			// Create SQL
 			StringBuffer sqlQuery = new StringBuffer();
 			sqlQuery.append(" SELECT \n");
-			sqlQuery.append("   LEARN_ID \n");
-			sqlQuery.append("  ,LESSON_ID \n");
-			sqlQuery.append("  ,START_DATE \n");
-			sqlQuery.append("  ,END_DATE \n");
-			sqlQuery.append("  ,STATUS \n");
-			sqlQuery.append("  ,COURSE_STATUS \n");
-			sqlQuery.append("  ,EXAM_MARK \n");
+			sqlQuery.append("   T1.LEARN_ID \n");
+			sqlQuery.append("  ,T1.LESSON_ID \n");
+			sqlQuery.append("  ,T1.START_DATE \n");
+			sqlQuery.append("  ,T1.END_DATE \n");
+			sqlQuery.append("  ,T1.STATUS \n");
+			sqlQuery.append("  ,T1.COURSE_STATUS \n");
+			sqlQuery.append("  ,T1.EXAM_MARK \n");
+			sqlQuery.append("  ,T2.LESSON_NAME \n");
 			sqlQuery.append(" FROM \n");
-			sqlQuery.append("   T_LEARN_" + userId + " \n");
+			sqlQuery.append("   T_LEARN_" + userId + " T1 \n");
+			sqlQuery.append("  ,T_LESSON T2 \n");
 			sqlQuery.append(" WHERE \n");
 			sqlQuery.append("       1 = 1 \n");
+			sqlQuery.append("   AND T1.LESSON_ID = T2.LESSON_ID \n");
 			sqlQuery.append(" ORDER BY \n");
-			sqlQuery.append("   LEARN_ID DESC \n");
+			sqlQuery.append("   T1.LEARN_ID DESC \n");
 			sqlQuery.append(" LIMIT 1 \n");
 
 			// Create Statement
@@ -175,6 +182,7 @@ public class LearnService {
 				learnDto.setStatus(rs.getBoolean("STATUS"));
 				learnDto.setCourseStatus(rs.getString("COURSE_STATUS"));
 				learnDto.setExamMark(rs.getLong("EXAM_MARK"));
+				learnDto.setLessonName(rs.getString("LESSON_NAME"));
 
 				return learnDto;
 			}

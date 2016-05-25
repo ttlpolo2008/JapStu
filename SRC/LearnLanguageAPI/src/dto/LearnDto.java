@@ -46,6 +46,11 @@ public class LearnDto implements Serializable {
 	private Long examMark;
 
 	/**
+	 * LESSON_NAME
+	 */
+	private String lessonName;
+
+	/**
 	 * @return the learnId
 	 */
 	public Long getLearnId() {
@@ -141,6 +146,20 @@ public class LearnDto implements Serializable {
 	 */
 	public void setExamMark(Long examMark) {
 		this.examMark = examMark;
+	}
+
+	/**
+	 * @return the lessonName
+	 */
+	public String getLessonName() {
+		return lessonName;
+	}
+
+	/**
+	 * @param lessonName the lessonName to set
+	 */
+	public void setLessonName(String lessonName) {
+		this.lessonName = lessonName;
 	}
 
 }
