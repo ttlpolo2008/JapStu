@@ -2,7 +2,9 @@ package enums;
 
 public enum AnswerType {
 	CHOOSE_ONE("1", "Choose one right answer."),
-	CHOOSE_MANY("2", "Choose all right answer.");
+	CHOOSE_MANY("2", "Choose all right answer."),
+	WRITING("3", "Write the right answer."),
+	LISTENING("4", "Listen.");
 
 	/**
 	 * CODE
