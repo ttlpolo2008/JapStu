@@ -407,9 +407,15 @@ public class LearnService {
 			sqlQuery.append("   AVG(EXAM_MARK) \n");
 			sqlQuery.append(" FROM \n");
 			sqlQuery.append("   T_LEARN_" + userId + " \n");
+			sqlQuery.append(" WHERE \n");
+			sqlQuery.append("       1 = 1 \n");
+			sqlQuery.append("   AND STATUS = ? \n");
 
 			// Create Statement
 			stmt = conn.prepareStatement(sqlQuery.toString());
+
+			// Edit parameter
+			stmt.setBoolean(1, true);
 
 			// Execute query
 			rs = stmt.executeQuery();
