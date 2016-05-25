@@ -70,7 +70,7 @@ public class LessonAPI {
 			JsonObject body = jsonParser.parse(requestBody).getAsJsonObject();
 
 			// Get LessonId
-			Long lessonId = null;
+			Long lessonId = null;	//TH chưa học bài nào.thì bằng null
 			if (body.has("lessonId")) {
 				lessonId = body.get("lessonId").getAsLong();
 			}

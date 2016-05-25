@@ -85,42 +85,6 @@ public class ExerciseDto implements Serializable {
 	private String answer5;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public ExerciseDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return LessonDto
-	 */
-	public ExerciseDto copy() {
-		ExerciseDto lessonDto = new ExerciseDto();
-		lessonDto.setExerciseId(this.exerciseId);
-		lessonDto.setLessonId(this.lessonId);
-		lessonDto.setQuestionType(this.questionType);
-		lessonDto.setAnswerType(this.answerType);
-		lessonDto.setQuestionContent(this.questionContent);
-		lessonDto.setQuestionContentFile(this.questionContentFile);
-		lessonDto.setQuestionContentFileStream(this.questionContentFileStream);
-		lessonDto.setMark(this.mark);
-		lessonDto.setTime(this.time);
-		lessonDto.setAnswerChoose(this.answerChoose);
-		lessonDto.setAnswer1(this.answer1);
-		lessonDto.setAnswer2(this.answer2);
-		lessonDto.setAnswer3(this.answer3);
-		lessonDto.setAnswer4(this.answer4);
-		lessonDto.setAnswer5(this.answer5);
-		lessonDto.setIsChange(this.isChange);
-
-		return lessonDto;
-	}
-
-	/**
 	 * @return the exerciseId
 	 */
 	public Long getExerciseId() {
@@ -314,20 +278,6 @@ public class ExerciseDto implements Serializable {
 	 */
 	public void setAnswer5(String answer5) {
 		this.answer5 = answer5;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 	/**

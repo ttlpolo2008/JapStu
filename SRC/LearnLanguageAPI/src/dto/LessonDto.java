@@ -39,22 +39,6 @@ public class LessonDto implements Serializable {
 	}
 
 	/**
-	 * Create a copy of this data.
-	 *
-	 * @return LessonDto
-	 */
-	public LessonDto copy() {
-		LessonDto lessonDto = new LessonDto();
-		lessonDto.setLessonId(this.lessonId);
-		lessonDto.setLessonNo(this.lessonNo);
-		lessonDto.setLessonName(this.lessonName);
-		lessonDto.setPassScore(this.passScore);
-		lessonDto.setIsChange(this.isChange);
-
-		return lessonDto;
-	}
-
-	/**
 	 * @return the lessonId
 	 */
 	public Long getLessonId() {

@@ -26,10 +26,11 @@ public class APIUtils {
 		}
 
 		try {
-			Ini iniFile = new Ini(new FileInputStream("C:/LearningLanguage/config.ini"));
-			if (iniFile != null) {
-				apiUri = iniFile.get("API", "API_URI");
-			}
+//			Ini iniFile = new Ini(new FileInputStream("C:/LearningLanguage/config.ini"));
+//			if (iniFile != null) {
+//				apiUri = iniFile.get("API", "API_URI");
+//			}
+			apiUri = "http://localhost:8080/LearnLanguageAPI/rest/%s/%s.json";
 			return true;
 		} catch (Exception ex) {
 			ex.printStackTrace();

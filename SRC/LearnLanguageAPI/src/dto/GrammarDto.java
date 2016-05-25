@@ -40,33 +40,6 @@ public class GrammarDto implements Serializable {
 	private Integer orderIndex;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public GrammarDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return VocabularyDto
-	 */
-	public GrammarDto copy() {
-		GrammarDto vocabularyDto = new GrammarDto();
-		vocabularyDto.setGrammarId(this.grammarId);
-		vocabularyDto.setLessonCourseId(this.lessonCourseId);
-		vocabularyDto.setSyntax(this.syntax);
-		vocabularyDto.setExplain(this.explain);
-		vocabularyDto.setExample(this.example);
-		vocabularyDto.setOrderIndex(this.orderIndex);
-		vocabularyDto.setIsChange(this.isChange);
-
-		return vocabularyDto;
-	}
-
-	/**
 	 * @return the grammarId
 	 */
 	public Long getGrammarId() {
@@ -150,19 +123,6 @@ public class GrammarDto implements Serializable {
 		this.orderIndex = orderIndex;
 	}
 
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
-	}
 
 
 }

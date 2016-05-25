@@ -25,30 +25,6 @@ public class LessonCourseDto implements Serializable {
 	private String courseType;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public LessonCourseDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return LessonDto
-	 */
-	public LessonCourseDto copy() {
-		LessonCourseDto lessonDto = new LessonCourseDto();
-		lessonDto.setLessonCourseId(this.lessonCourseId);
-		lessonDto.setLessonId(this.lessonId);
-		lessonDto.setCourseType(this.courseType);
-		lessonDto.setIsChange(this.isChange);
-
-		return lessonDto;
-	}
-
-	/**
 	 * @return the lessonCourseId
 	 */
 	public Long getLessonCourseId() {
@@ -88,20 +64,6 @@ public class LessonCourseDto implements Serializable {
 	 */
 	public void setCourseType(String courseType) {
 		this.courseType = courseType;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 }

@@ -55,36 +55,6 @@ public class VocabularyDto implements Serializable {
 	private Integer orderIndex;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public VocabularyDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return VocabularyDto
-	 */
-	public VocabularyDto copy() {
-		VocabularyDto vocabularyDto = new VocabularyDto();
-		vocabularyDto.setVocabularyId(this.vocabularyId);
-		vocabularyDto.setLessonCourseId(this.lessonCourseId);
-		vocabularyDto.setWord(this.word);
-		vocabularyDto.setKanji(this.kanji);
-		vocabularyDto.setMeaning(this.meaning);
-		vocabularyDto.setPronunceFile(this.pronunceFile);
-		vocabularyDto.setPronunceFileStream(this.pronunceFileStream);
-		vocabularyDto.setExplain(this.explain);
-		vocabularyDto.setOrderIndex(this.orderIndex);
-		vocabularyDto.setIsChange(this.isChange);
-
-		return vocabularyDto;
-	}
-
-	/**
 	 * @return the vocabularyId
 	 */
 	public Long getVocabularyId() {
@@ -180,20 +150,6 @@ public class VocabularyDto implements Serializable {
 	 */
 	public void setOrderIndex(Integer orderIndex) {
 		this.orderIndex = orderIndex;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 	/**

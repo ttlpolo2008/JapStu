@@ -24,14 +24,6 @@ public enum QuestionType {
 		this.label = label;
 	}
 
-	public static QuestionType getQuestionType(String code) {
-		for (QuestionType questionType : values()) {
-			if (questionType.getCode().equals(code)) {
-				return questionType;
-			}
-		}
-		return null;
-	}
 
 	/**
 	 * @return the code

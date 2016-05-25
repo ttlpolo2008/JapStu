@@ -45,34 +45,6 @@ public class ReadingDto implements Serializable {
 	private Integer orderIndex;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public ReadingDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return VocabularyDto
-	 */
-	public ReadingDto copy() {
-		ReadingDto vocabularyDto = new ReadingDto();
-		vocabularyDto.setReadingId(this.readingId);
-		vocabularyDto.setLessonCourseId(this.lessonCourseId);
-		vocabularyDto.setTitle(this.title);
-		vocabularyDto.setContent(this.content);
-		vocabularyDto.setContentPron(this.contentPron);
-		vocabularyDto.setContentTranslate(this.contentTranslate);
-		vocabularyDto.setOrderIndex(this.orderIndex);
-		vocabularyDto.setIsChange(this.isChange);
-
-		return vocabularyDto;
-	}
-
-	/**
 	 * @return the readingId
 	 */
 	public Long getReadingId() {
@@ -154,20 +126,6 @@ public class ReadingDto implements Serializable {
 	 */
 	public void setOrderIndex(Integer orderIndex) {
 		this.orderIndex = orderIndex;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 	/**

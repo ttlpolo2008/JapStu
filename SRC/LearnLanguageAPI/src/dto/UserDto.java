@@ -44,31 +44,6 @@ public class UserDto implements Serializable {
 	 */
 	private String profileImage;
 
-	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public UserDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return LessonDto
-	 */
-	public UserDto copy() {
-		UserDto lessonDto = new UserDto();
-		lessonDto.setUserId(this.userId);
-		lessonDto.setUserName(this.userName);
-		lessonDto.setPassword(this.password);
-		lessonDto.setUserType(this.userType);
-		lessonDto.setNickName(this.nickName);
-		lessonDto.setIsChange(this.isChange);
-
-		return lessonDto;
-	}
 
 	/**
 	 * @return the userId
@@ -140,19 +115,6 @@ public class UserDto implements Serializable {
 		this.nickName = nickName;
 	}
 
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
-	}
 
 	/**
 	 * @return the age

@@ -154,7 +154,7 @@ public class LearnAPI {
 					execResult = LearnService.updateLearn(learnDto, userId);
 				}
 
-				// Commit/Rollback data
+				// Commit/ Rollback data
 				if (execResult) {
 					CommonDAO.getDAO().commit();
 					result.addProperty("result", true);

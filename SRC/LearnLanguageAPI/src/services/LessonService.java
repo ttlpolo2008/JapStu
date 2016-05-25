@@ -36,7 +36,7 @@ public class LessonService {
 			sqlQuery.append("   T_LESSON \n");
 			sqlQuery.append(" WHERE \n");
 			sqlQuery.append("       1 = 1 \n");
-			sqlQuery.append("  AND LESSON_ID = ? \n");
+			sqlQuery.append("   AND LESSON_ID = ? \n");
 
 			// Create Statement
 			stmt = conn.prepareStatement(sqlQuery.toString());

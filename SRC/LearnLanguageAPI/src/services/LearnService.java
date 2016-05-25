@@ -59,40 +59,6 @@ public class LearnService {
 		}
 		return false;
 	}
-
-	/**
-	 * Drop table T_LEARN
-	 *
-	 * @param userId
-	 * @return Boolean True:Success / False:Fail
-	 */
-	public static Boolean dropLearn(Long userId) {
-
-		// if [userId = null], return false
-		if (userId == null) {
-			return false;
-		}
-
-		// Get DAO
-		Connection conn = CommonDAO.getDAO();
-		try {
-			// Create SQL
-			StringBuffer sqlQuery = new StringBuffer();
-			sqlQuery.append(" DROP TABLE `T_LEARN_" + userId + "` \n");
-
-			// Create Statement
-			PreparedStatement stmt = conn.prepareStatement(sqlQuery.toString());
-
-			// Execute SQL
-			stmt.executeUpdate();
-			return true;
-
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		}
-		return false;
-	}
-
 	/**
 	 * Search all study history
 	 *
@@ -136,12 +102,6 @@ public class LearnService {
 				LearnDto learnDto = new LearnDto();
 				learnDto.setLearnId(rs.getLong("LEARN_ID"));
 				learnDto.setLessonId(rs.getLong("LESSON_ID"));
-
-//				Date startDate = rs.getDate("START_DATE");
-//				if (startDate != null) {
-//					learnDto.setStartDate(
-//							StringUtil.cnvToDate(startDate.toString()));
-//				}
 				learnDto.setStartDate(rs.getDate("START_DATE"));
 				learnDto.setEndDate(rs.getDate("END_DATE"));
 				learnDto.setStatus(rs.getBoolean("STATUS"));

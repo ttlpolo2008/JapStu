@@ -60,37 +60,6 @@ public class KanjiDto implements Serializable {
 	private Integer orderIndex;
 
 	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public KanjiDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return VocabularyDto
-	 */
-	public KanjiDto copy() {
-		KanjiDto vocabularyDto = new KanjiDto();
-		vocabularyDto.setKanjiId(this.kanjiId);
-		vocabularyDto.setLessonCourseId(this.lessonCourseId);
-		vocabularyDto.setWord(this.word);
-		vocabularyDto.setOnYomi(this.onYomi);
-		vocabularyDto.setKunYomi(this.kunYomi);
-		vocabularyDto.setMeaning(this.meaning);
-		vocabularyDto.setWriteFile(this.writeFile);
-		vocabularyDto.setWriteFileStream(this.writeFileStream);
-		vocabularyDto.setExplain(this.explain);
-		vocabularyDto.setOrderIndex(this.orderIndex);
-		vocabularyDto.setIsChange(this.isChange);
-
-		return vocabularyDto;
-	}
-
-	/**
 	 * @return the kanjiId
 	 */
 	public Long getKanjiId() {
@@ -200,20 +169,6 @@ public class KanjiDto implements Serializable {
 	 */
 	public void setOrderIndex(Integer orderIndex) {
 		this.orderIndex = orderIndex;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 	/**

@@ -44,32 +44,6 @@ public class ConversationDto implements Serializable {
 	 */
 	private Integer orderIndex;
 
-	/**
-	 * Change's flag
-	 */
-	private Boolean isChange;
-
-	public ConversationDto() {
-		this.isChange = false;
-	}
-
-	/**
-	 * Create a copy of this data.
-	 *
-	 * @return VocabularyDto
-	 */
-	public ConversationDto copy() {
-		ConversationDto vocabularyDto = new ConversationDto();
-		vocabularyDto.setConversationId(this.conversationId);
-		vocabularyDto.setLessonCourseId(this.lessonCourseId);
-		vocabularyDto.setTitle(this.title);
-		vocabularyDto.setContent(this.content);
-		vocabularyDto.setContentFile(this.contentFile);
-		vocabularyDto.setOrderIndex(this.orderIndex);
-		vocabularyDto.setIsChange(this.isChange);
-
-		return vocabularyDto;
-	}
 
 	/**
 	 * @return the conversationId
@@ -153,20 +127,6 @@ public class ConversationDto implements Serializable {
 	 */
 	public void setOrderIndex(Integer orderIndex) {
 		this.orderIndex = orderIndex;
-	}
-
-	/**
-	 * @return the isChange
-	 */
-	public Boolean getIsChange() {
-		return isChange;
-	}
-
-	/**
-	 * @param isChange the isChange to set
-	 */
-	public void setIsChange(Boolean isChange) {
-		this.isChange = isChange;
 	}
 
 	/**

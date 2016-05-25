@@ -16,7 +16,7 @@ public class CommonDAO {
 
 		String url = "jdbc:mysql://localhost:3306/LearnLanguage";
 		String username = "root";
-		String password = "root";
+		String password = "123456";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

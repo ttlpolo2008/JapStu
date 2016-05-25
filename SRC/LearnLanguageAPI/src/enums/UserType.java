@@ -19,15 +19,6 @@ public enum UserType {
 		this.label = label;
 	}
 
-	public static UserType getUserType(String code) {
-		for (UserType answerType : values()) {
-			if (answerType.getCode().equals(code)) {
-				return answerType;
-			}
-		}
-		return null;
-	}
-
 	/**
 	 * @return the code
 	 */
