@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.learning.japstu.japstu.RegistrationActivity"
+    tools:showIn="@layout/activity_registration"
+    android:background="@drawable/background"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="REGISTRATION FORM"
+        android:textColor="@color/wallet_holo_blue_light"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/title_registration"
+        android:layout_marginBottom="30dp"
+    />
+    <TableLayout
+        android:id="@+id/registration_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_registration">
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_username"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:text="User name :"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:hint="Enter user name"
+                android:focusable="true"
+                android:textSize="14dp"
+                android:textColorHighlight="#ff7eff15"
+                android:textColorHint="#bdbdbd"
+                android:singleLine="true"
+                android:autoText="false"
+                android:gravity="center_horizontal"
+
+                />
+        </TableRow>
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:id="@+id/lbl_password"
+                android:textSize="14dp"
+                android:text="Password :"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="Enter your password"
+                android:focusable="true"
+                android:textColorHighlight="#ff7eff15"
+                android:textSize="14dp"
+                android:textColorHint="#bdbdbd"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:autoText="false"
+                android:gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:id="@+id/lbl_cfmpwd"
+                android:textSize="14dp"
+                android:text="Confirm password :"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/confirmPWD"
+                android:hint="Confirm password."
+                android:focusable="true"
+                android:inputType="textPassword"
+                android:textColorHighlight="#ff7eff15"
+                android:textColorHint="#bdbdbd"
+                android:textSize="14dp"
+                android:singleLine="true"
+                android:autoText="false"
+                android:gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:id="@+id/lbl_email"
+                android:text="Email :"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userEmail"
+                android:hint="Enter your email"
+                android:focusable="true"
+                android:textColorHighlight="#ff7eff15"
+                android:textColorHint="#bdbdbd"
+                android:textSize="14dp"
+                android:singleLine="true"
+                android:autoText="false"
+                android:gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:id="@+id/lbl_nickname"
+                android:textSize="14dp"
+                android:text="Nick name :"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nickname"
+                android:hint="Enter nick name."
+                android:focusable="true"
+                android:textColorHighlight="#ff7eff15"
+                android:textSize="14dp"
+                android:textColorHint="#bdbdbd"
+                android:singleLine="true"
+                android:autoText="false"
+                android:gravity="center_horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+        <TableRow>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lbl_age"
+                android:textColor="@android:color/black"
+                android:textSize="14dp"
+                android:text="Age :"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/age"
+                android:hint="Enter your ages."
+                android:focusable="true"
+                android:textColorHighlight="#ff7eff15"
+                android:textSize="14dp"
+                android:textColorHint="#bdbdbd"
+                android:singleLine="true"
+                android:autoText="false"
+                android:inputType="numberDecimal"
+                android:gravity="center_horizontal"
+                android:imeOptions="actionDone"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:id="@+id/btn_submit_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registration_content"
+        android:layout_marginTop="10dp"
+        android:gravity="right">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_ocean_bg"
+            android:text="@string/btn_Submit"
+            android:id="@+id/btn_register"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:onClick="doSubmitRegistration"/>
+    </LinearLayout>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_submit_group"
+        android:background="@drawable/prev"
+        android:onClick="doBackButtonEvent"/>
+</RelativeLayout>

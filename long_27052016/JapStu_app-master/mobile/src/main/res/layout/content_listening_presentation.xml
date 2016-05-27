@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.learning.japstu.japstu.ListeningPresentationActivity"
+    tools:showIn="@layout/activity_listening_presentation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layoutDirection="rtl">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/small_play"
+                android:layout_gravity="right|center_vertical"
+                android:onClick="doSoundReibun"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bunkei_title"
+                android:textColor="@color/title_lesson_color"
+                android:gravity="left"
+                android:text="文型"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layoutDirection="rtl">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/small_play"
+                android:layout_gravity="right|center_vertical"
+                android:onClick="doSoundBunkei"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:id="@+id/reibun_title"
+                android:text="例文"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/title_lesson_color"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bunkei_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listening content :"
+            android:textSize="16sp"
+            android:textColor="@color/hint_color"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bunkei_content_phg"
+                android:textSize="14sp"
+                android:textColor="@color/meaning_color"
+                android:text="
+                1. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n
+                2. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n
+                3. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n
+                4. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n"/>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/reibun_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listening content :"
+            android:textSize="16sp"
+            android:textColor="@color/hint_color"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reibun_content_phg"
+                android:textSize="14sp"
+                android:textColor="@color/meaning_color"
+                android:text="
+                1. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n
+                2. わたしは　マイク・ミラーです。\n
+                Tôi là Mike Miller.\n
+                サントスさんは　がくせい じゃ ありません\n"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

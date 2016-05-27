@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff3F51B5</color>
+    <color name="colorPrimaryDark">#ff303F9F</color>
+    <color name="colorAccent">#ffFF4081</color>
+    <color name="divider_color">#ffd3d3d3</color>
+    <color name="tbl_color">#ff8ea9e3</color>
+    <color name="background_color">#ff3f97b5</color>
+    <color name="hint_color">#ff787878</color>
+    <color name="meaning_color">#ffd84200</color>
+    <color name="title_lesson_color">#ff05d100</color>
+    <color name="title_page_color">#ffffffff</color>
+    <color name="items_name">#ff3f97b5</color>
+</resources>
