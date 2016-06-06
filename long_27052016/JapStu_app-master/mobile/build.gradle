@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.learning.japstu.japstu"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile files('libs/APIServices.jar')
+    compile 'com.android.support:appcompat-v7:24.0.0-alpha1'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:support-v4:24.0.0-alpha1'
+    compile 'com.android.support:recyclerview-v7:24.0.0-alpha1'
+    compile 'com.android.support:design:24.0.0-alpha1'
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
+    compile 'com.google.android.gms:play-services-identity:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile files('libs/ini4j-0.5.2.jar')
+    compile files('libs/gson-2.2.4.jar')
+}

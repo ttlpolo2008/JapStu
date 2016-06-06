@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:gravity="left">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/question_type_1_title"
+            android:text="Word : "
+            android:textSize="16sp"
+            android:textColor="@color/hint_color"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/question_type_3_content"
+            android:text="わたしis mean that"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/question_type_3_answer_field"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/answer_type_3_title"
+                android:text="Write down your answer at below :"
+                android:textSize="16sp"
+                android:textColor="@color/hint_color"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Fill answer here"
+                android:id="@+id/answer_type_3"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

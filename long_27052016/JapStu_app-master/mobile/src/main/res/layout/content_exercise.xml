@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.learning.japstu.japstu.ExerciseActivity"
+    tools:showIn="@layout/activity_exercise">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/command_field"
+        android:orientation="vertical"
+        android:gravity="right">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/counted_question"
+            android:text="Question : 1/10"
+            android:textColor="@color/meaning_color"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/countdown_timer"
+            android:text="45s"
+            android:textSize="45sp"
+            android:textColor="@color/meaning_color">
+        </TextView>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_field_1"
+        android:visibility="gone"
+        android:padding="10dp">
+        <include layout="@layout/question_type_one_right" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/question_field_2"
+        android:padding="10dp">
+        <include layout="@layout/question_type_many_rights" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_field_3"
+        android:padding="10dp">
+        <include layout="@layout/question_type_writing" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exercise_btn_field"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_ocean_bg"
+            android:id="@+id/btn_show_result"
+            android:layout_gravity="left"
+            android:text="Result"
+            android:textColor="@android:color/white"
+            android:onClick="doShowResult"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_ocean_bg"
+                android:id="@+id/btn_next_question"
+                android:layout_gravity="right"
+                android:text="Next"
+                android:textColor="@android:color/white"
+                android:onClick="doCallNextQuestion"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
