@@ -258,6 +258,7 @@ public class ExerciseService {
 
 	private static String createTest_CreateSQL(QuestionType questionType) {
 		StringBuffer sqlQuery = new StringBuffer();
+		sqlQuery.append(" ( \n");
 		sqlQuery.append(" SELECT \n");
 		sqlQuery.append("   T_EXERCISE.EXERCISE_ID \n");
 		sqlQuery.append("  ,T_EXERCISE.LESSON_ID \n");
@@ -292,10 +293,12 @@ public class ExerciseService {
 			sqlQuery.append("   AND T_EXERCISE.QUESTION_TYPE = ? \n");
 			sqlQuery.append(" ORDER BY RAND() \n");
 			sqlQuery.append(" LIMIT ? \n");
+			sqlQuery.append(" ) \n");
 			sqlQuery.append(" UNION \n");
 		} else {
 			sqlQuery.append(" ORDER BY RAND() \n");
 			sqlQuery.append(" LIMIT 50 \n");
+			sqlQuery.append(" ) \n");
 		}
 
 		return sqlQuery.toString();
